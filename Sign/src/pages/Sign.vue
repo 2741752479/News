@@ -1,0 +1,217 @@
+
+<template>
+  <div class="sign">
+    <div class="top">纳新报名</div>
+    <div class="content"> 
+        <div class="sgn">
+            <p>您的姓名：</p>
+            <input id='ipt1' type="text" v-model="stuName"/>
+        </div>
+        <div class="sgn">
+            <p>您的联系方式:</p>
+            <input id='ipt2' type="text" v-model="phoneNum"/>
+        </div>
+        <div class="sgn">
+            <p>您的学号：</p>
+            <input id='ipt3' type="text" v-model="stuNum"/>
+        </div>
+        <div class="sgn">
+            <p>您所在的学院：</p>
+            <input id='ipt4' type="text" v-model="x"/>
+        </div>
+        <div class="sgn">
+            <p>您想要参加的部门(首选):</p>
+            <input id='ipt5' type="text" v-model="department1"/>
+        </div>
+        <div class="sgn">
+            <p>您想要参加的部门(次选):</p>
+            <input id='ipt6' type="text" v-model="department2"/>
+        </div>
+        <br/>
+        <br/>
+        <div class="submit" @click="Submit">提交</div>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from 'axios'
+import { MessageBox } from 'mint-ui'
+export default {
+    name:'Sign',
+    data(){
+        return{
+            //  x:''||localStorage.getItem('x'),
+            //  stuName:''||localStorage.getItem('stuName'),
+            //  stuNum:''||localStorage.getItem('stuNum'),
+            //  phoneNum:''||localStorage.getItem('phoneNum'),
+            //  department1:''||localStorage.getItem('department1'),
+            //  department2:''||localStorage.getItem('department2'),
+                 x:'',
+             stuName:'',
+             stuNum:'',
+             phoneNum:'',
+             department1:'',
+             department2:''
+        }
+    },
+    methods:{
+        // ad(){
+        //     var myregex = /^[0-9]*$/
+        //     let show = myregex.test(this.phoneNum)
+        // },
+        Submit(){
+            var myregex = /^[0-9]*$/
+            let show = myregex.test(this.phoneNum)
+            if (this.stuName === '') {
+               MessageBox('请输入姓名');
+            }
+            else if (this.phoneNum === ''||!show||this.phoneNum.length!=11)
+            {
+                MessageBox('请输入正确号码');
+            }
+            else if (this.stuNum === ''||this.stuNum.length!==10)
+            {
+                MessageBox('请输入正确学号');
+            }
+            else if (this.x==='') {
+                MessageBox('请输入所在学院');
+            }
+            else if (this.department1==='') {
+                MessageBox('请输入想参加的部门');
+            }
+            else {
+                axios({
+                    method:'post',
+                    url:'http://localhost:8888/student/apply',
+                    data:{
+                        department1:this.department1,
+                        department2:this.department2,
+                        phoneNum:this.phoneNum,
+                        stuName:this.stuName,
+                        stuNum:this.stuNum
+                    }
+                }).then(res=>{
+                    if(res.data.code===200){
+                        MessageBox('提交成功').then(action=>{
+                            // localStorage.setItem('stuName', this.stuName)
+                            // localStorage.setItem('stuNum', this.stuNum)
+                            // localStorage.setItem('phoneNum', this.phoneNum)
+                            // localStorage.setItem('department1', this.department1)
+                            // localStorage.setItem('department2', this.department2)
+                            // localStorage.setItem('x', this.x)
+                            this.$router.push({
+                                path: '/'
+                            })
+                        })
+                    }
+                    else if(res.data.code===201){
+                        MessageBox('您已报名过')
+                    }
+                    
+                })
+            }
+        }
+    }
+}
+</script>
+
+<style scoped>
+    .content{
+        display: flex;
+        padding-top:1rem;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+    }
+    .sgn{
+        margin: 5px;
+        height: 20%;
+        width: 90%;
+    }
+    .submit{
+        border: 1px solid rgba(0, 0, 0, .2);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        border-radius:8px;
+        font-size: 5vw;
+        line-height: 15vw;
+        text-align: center;
+        height: 15vw;
+        width: 60vw;
+    }
+    p{
+        font-size: 18px;
+        margin: 2vw;
+    }
+    input:focus{
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 5px rgba(81, 203, 238, 1);
+    }
+    #ipt1{ 
+        padding-left: 4vw; 
+        height: 12vw;
+        width:95%;
+        border: 1px solid rgba(0, 0, 0, .2);
+        background:url(../../static/Person.png) no-repeat;
+        border-radius:5px;
+        background-size: 1rem;
+        background-position: 95% 50%;
+        font-size: 20px;
+    }
+    #ipt2{ 
+        padding-left: 4vw; 
+        height: 12vw;
+        width:95%;
+        border: 1px solid rgba(0, 0, 0, .2);
+        background:url(../../static/Phone.png) no-repeat;
+        border-radius:5px;
+        background-size: 1rem;
+        background-position: 95% 50%;
+        font-size: 20px;
+    }
+    #ipt3{ 
+        padding-left: 4vw; 
+        height: 12vw;
+        width:95%;
+        border: 1px solid rgba(0, 0, 0, .2);
+        background:url(../../static/IDCard.png) no-repeat;
+        border-radius:5px;
+        background-size: 1rem;
+        background-position: 95% 50%;
+        font-size: 20px;
+    }
+    #ipt4{ 
+        padding-left: 4vw; 
+        height: 12vw;
+        width:95%;
+        border: 1px solid rgba(0, 0, 0, .2);
+        background:url(../../static/Home.png) no-repeat;
+          border-radius:5px;
+        background-size: 1rem;
+        background-position: 95% 50%;
+        font-size: 20px;
+    }
+    #ipt5{ 
+        padding-left: 4vw; 
+        height: 12vw;
+        width:95%;
+        border: 1px solid rgba(0, 0, 0, .2);
+        background:url(../../static/Upload.png) no-repeat;
+          border-radius:5px;
+        background-size: 1rem;
+        background-position: 95% 50%;
+        font-size: 20px;
+    }
+    #ipt6{ 
+        padding-left: 4vw; 
+        height: 12vw;
+        width:95%;
+        border: 1px solid rgba(0, 0, 0, .2);
+        background:url(../../static/Upload.png) no-repeat;
+         border-radius:5px;
+        background-size: 1rem;
+        background-position: 95% 50%;
+        font-size: 20px;
+    }
+</style>
