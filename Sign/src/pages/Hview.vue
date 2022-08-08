@@ -3,20 +3,20 @@
         <div class="top">欢迎加入桑梓实验室！</div>
         <div class="content">
             <div class="btn1">
-                <p style="font-size: 4vw;margin-top: 4vw;">实验室介绍</p>
-                <p style="font-size: 1vw;opacity:0.9">看看实验室都有些什么吧</p>
+                <p style="font-size: 5vw;margin-top: 5vw;">实验室介绍</p>
+                <p style="font-size: 2vw;margin-top: 2vw;opacity:0.9">看看实验室都有些什么吧</p>
             </div>
             <div class="btn2">
-                <p style="font-size: 4vw;margin-top: 4vw;">问卷测试</p>
-                <p style="font-size: 1vw;opacity:0.9">测试看看你适合哪一个部门吧</p>
+                <p style="font-size: 5vw;margin-top: 5vw;">问卷测试</p>
+                <p style="font-size: 2vw;margin-top: 2vw;opacity:0.9">测试看看你适合哪一个部门吧</p>
             </div>
             <div class="btn3" @click="getsign">
-                <p style="font-size: 4vw;margin-top: 4vw;">纳新报名</p>
-                <p style="font-size: 1vw;opacity:0.8">赶紧填写报名表参与纳新吧</p>
+                <p style="font-size: 4vw;margin-top: 5vw;">纳新报名</p>
+                <p style="font-size: 2vw;margin-top: 2vw;opacity:0.9">赶紧填写报名表参与纳新吧</p>
             </div>
             <div class="btn4" @click="getapply">
-                <p style="font-size: 4vw;margin-top: 4vw;">面试预约</p>
-                <p style="font-size: 1vw;opacity:0.8">预约你的面试吧</p>
+                <p style="font-size: 5vw;margin-top: 5vw;">面试预约</p>
+                <p style="font-size: 2vw;margin-top: 2vw;opacity:0.9">预约你的面试吧</p>
             </div>
             
         </div>
@@ -48,17 +48,17 @@
     }
     .btn1,.btn2,.btn3,.btn4{
         position: relative;
-        height: 17vw;
-        width: 60%;
+        height: 20vw;
+        width: 70%;
         border: 1px solid rgba(0, 0, 0, .2);
         box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
         border-radius:8px;
-        margin: 40px;
+        margin: 8vw;
     }
     .btn1::before{
     content:"";
     position: absolute;
-    top:4vw;
+    top:5vw;
     left:2vw;
     width: 17vw;
     height: 17vw;
@@ -68,7 +68,7 @@
      .btn2::before{
     content:"";
     position: absolute; 
-    top:4vw;
+     top:5vw;
     left:2vw;
     width: 17vw;
     height: 17vw;
@@ -78,7 +78,7 @@
      .btn3::before{
     content:"";
     position: absolute; 
-    top:3vw;
+     top:5vw;
     left:2vw;
     width: 17vw;
     height: 17vw;
@@ -88,7 +88,7 @@
      .btn4::before{
     content:"";
     position: absolute;
-    top:4vw;
+     top:5vw;
     left:2vw;
     width: 17vw;
     height: 17vw;

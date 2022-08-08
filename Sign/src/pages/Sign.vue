@@ -27,9 +27,7 @@
             <p>您想要参加的部门(次选):</p>
             <input id='ipt6' type="text" v-model="department2"/>
         </div>
-        <br/>
-        <br/>
-        <div class="submit" @click="Submit">提交</div>
+        <div class="submit" @click="Submit" v-show="btnshow">提交</div>
     </div>
   </div>
 </template>
@@ -41,29 +39,40 @@ export default {
     name:'Sign',
     data(){
         return{
-            //  x:''||localStorage.getItem('x'),
-            //  stuName:''||localStorage.getItem('stuName'),
-            //  stuNum:''||localStorage.getItem('stuNum'),
-            //  phoneNum:''||localStorage.getItem('phoneNum'),
-            //  department1:''||localStorage.getItem('department1'),
-            //  department2:''||localStorage.getItem('department2'),
-                 x:'',
-             stuName:'',
-             stuNum:'',
-             phoneNum:'',
-             department1:'',
-             department2:''
+            x:'',
+            stuName:'',
+            stuNum:'',
+            phoneNum:'',
+            department1:'',
+            department2:'',
+            docmHeight: document.documentElement.clientHeight, //默认屏幕高度
+            showHeight: document.documentElement.clientHeight, //实时屏幕高度
+            btnshow:true
         }
     },
+   mounted () {
+    // 对手机机型的判断
+      window.onresize = ()=>{
+        return(()=>{
+        this.showHeight = document.body.clientHeight;
+        })()
+        }
+    },
+    watch:{
+        showHeight:function() {
+        if(this.docmHeight > this.showHeight){
+        this.btnshow=false
+        }else{
+        this.btnshow=true
+        }
+        }   
+    },
     methods:{
-        // ad(){
-        //     var myregex = /^[0-9]*$/
-        //     let show = myregex.test(this.phoneNum)
-        // },
         Submit(){
+            var reg = /^[\u4E00-\u9FA5]{2,4}$/;
             var myregex = /^[0-9]*$/
             let show = myregex.test(this.phoneNum)
-            if (this.stuName === '') {
+            if (!(reg.test(this.stuName))) {
                MessageBox('请输入姓名');
             }
             else if (this.phoneNum === ''||!show||this.phoneNum.length!=11)
@@ -121,13 +130,12 @@ export default {
         display: flex;
         padding-top:1rem;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        height: 100%;
     }
     .sgn{
         margin: 5px;
-        height: 20%;
+        height: 20vw;
         width: 90%;
     }
     .submit{
@@ -137,12 +145,15 @@ export default {
         font-size: 5vw;
         line-height: 15vw;
         text-align: center;
-        height: 15vw;
+        height: 14vw;
         width: 60vw;
+        bottom: 1rem;
+        margin: auto ;
+        position:absolute;
     }
     p{
         font-size: 18px;
-        margin: 2vw;
+        margin: 1vw;
     }
     input:focus{
         outline: 0;
@@ -150,7 +161,7 @@ export default {
     }
     #ipt1{ 
         padding-left: 4vw; 
-        height: 12vw;
+        height: 10vw;
         width:95%;
         border: 1px solid rgba(0, 0, 0, .2);
         background:url(../../static/Person.png) no-repeat;
@@ -161,7 +172,8 @@ export default {
     }
     #ipt2{ 
         padding-left: 4vw; 
-        height: 12vw;
+        /* height: 12vw; */
+        height: 10vw;
         width:95%;
         border: 1px solid rgba(0, 0, 0, .2);
         background:url(../../static/Phone.png) no-repeat;
@@ -172,7 +184,7 @@ export default {
     }
     #ipt3{ 
         padding-left: 4vw; 
-        height: 12vw;
+        height: 10vw;
         width:95%;
         border: 1px solid rgba(0, 0, 0, .2);
         background:url(../../static/IDCard.png) no-repeat;
@@ -183,7 +195,7 @@ export default {
     }
     #ipt4{ 
         padding-left: 4vw; 
-        height: 12vw;
+        height: 10vw;
         width:95%;
         border: 1px solid rgba(0, 0, 0, .2);
         background:url(../../static/Home.png) no-repeat;
@@ -194,7 +206,7 @@ export default {
     }
     #ipt5{ 
         padding-left: 4vw; 
-        height: 12vw;
+        height: 10vw;
         width:95%;
         border: 1px solid rgba(0, 0, 0, .2);
         background:url(../../static/Upload.png) no-repeat;
@@ -205,7 +217,7 @@ export default {
     }
     #ipt6{ 
         padding-left: 4vw; 
-        height: 12vw;
+        height: 10vw;
         width:95%;
         border: 1px solid rgba(0, 0, 0, .2);
         background:url(../../static/Upload.png) no-repeat;
@@ -214,4 +226,5 @@ export default {
         background-position: 95% 50%;
         font-size: 20px;
     }
+    
 </style>
