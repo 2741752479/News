@@ -11,7 +11,7 @@
                 <p style="font-size: 2vw;margin-top: 2vw;opacity:0.9">测试看看你适合哪一个部门吧</p>
             </div>
             <div class="btn3" @click="getsign">
-                <p style="font-size: 4vw;margin-top: 5vw;">纳新报名</p>
+                <p style="font-size: 5vw;margin-top: 5vw;">纳新报名</p>
                 <p style="font-size: 2vw;margin-top: 2vw;opacity:0.9">赶紧填写报名表参与纳新吧</p>
             </div>
             <div class="btn4" @click="getapply">

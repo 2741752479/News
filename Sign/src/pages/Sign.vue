@@ -21,11 +21,25 @@
         </div>
         <div class="sgn">
             <p>您想要参加的部门(首选):</p>
-            <input id='ipt5' type="text" v-model="department1"/>
+           <select v-model="department1" id='ipt5'>
+                <option value=""></option>
+                <option value="软件部">软件部</option>
+                <option value="策划部">策划部</option>
+                <option value="运维部">运维部</option>
+                <option value="运营部">运营部</option>
+                <option value="美工部">美工部</option>
+            </select>
         </div>
         <div class="sgn">
             <p>您想要参加的部门(次选):</p>
-            <input id='ipt6' type="text" v-model="department2"/>
+            <select v-model="department2" id='ipt6'>
+                <option value=""></option>
+                <option value="软件部">软件部</option>
+                <option value="策划部">策划部</option>
+                <option value="运维部">运维部</option>
+                <option value="运营部">运营部</option>
+                <option value="美工部">美工部</option>
+                </select>
         </div>
         <div class="submit" @click="Submit" v-show="btnshow">提交</div>
     </div>
@@ -206,25 +220,27 @@ export default {
     }
     #ipt5{ 
         padding-left: 4vw; 
-        height: 10vw;
-        width:95%;
+        height: 10.5vw;
+        width:100%;
         border: 1px solid rgba(0, 0, 0, .2);
         background:url(../../static/Upload.png) no-repeat;
-          border-radius:5px;
+        border-radius:5px;
         background-size: 1rem;
         background-position: 95% 50%;
         font-size: 20px;
+        appearance:none
     }
     #ipt6{ 
         padding-left: 4vw; 
-        height: 10vw;
-        width:95%;
+        height: 10.5vw;
+        width:100%;
         border: 1px solid rgba(0, 0, 0, .2);
         background:url(../../static/Upload.png) no-repeat;
          border-radius:5px;
         background-size: 1rem;
         background-position: 95% 50%;
         font-size: 20px;
+        appearance:none
     }
     
 </style>

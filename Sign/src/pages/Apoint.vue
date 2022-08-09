@@ -111,15 +111,15 @@ export default {
 
         }
     },
-    mounted() {
-        window.onresize= ()=>{
-            if(this.clientHeight>document.documentElement.clientHeight*1.5) {
-                    this.showBtn =false
-            }else{
-                this.showBtn = true
-            }
-        }
-    }
+    // mounted() {
+    //     window.onresize= ()=>{
+    //         if(this.clientHeight>document.documentElement.clientHeight*1.5) {
+    //                 this.showBtn =false
+    //         }else{
+    //             this.showBtn = true
+    //         }
+    //     }
+    // }
     }
 }
 </script>
@@ -197,7 +197,7 @@ export default {
     }
      #ipt5{ 
         padding-left: 4vw; 
-        height: 12vw;
+        height: 12.5vw;
         width:100%;
         border: 1px solid rgba(0, 0, 0, .2);
         background:url(../../static/Upload.png) no-repeat;
@@ -209,7 +209,7 @@ export default {
     }
     #ipt6{ 
         padding-left: 4vw; 
-        height: 12vw;
+        height: 12.5vw;
         width:100%;
         border: 1px solid rgba(0, 0, 0, .2);
         background:url(../../static/Upload.png) no-repeat;
