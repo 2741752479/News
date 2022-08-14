@@ -17,7 +17,7 @@
         </div>
         <div class="sgn">
             <p>您所在的学院：</p>
-            <input id='ipt4' type="text" v-model="x"/>
+            <input id='ipt4' type="text" v-model="academy"/>
         </div>
         <div class="sgn">
             <p>您想要参加的部门(首选):</p>
@@ -53,7 +53,7 @@ export default {
     name:'Sign',
     data(){
         return{
-            x:'',
+            academy:'',
             stuName:'',
             stuNum:'',
             phoneNum:'',
@@ -112,7 +112,8 @@ export default {
                         department2:this.department2,
                         phoneNum:this.phoneNum,
                         stuName:this.stuName,
-                        stuNum:this.stuNum
+                        stuNum:this.stuNum,
+                        academy:this.academy,
                     }
                 }).then(res=>{
                     if(res.data.code===200){
@@ -128,7 +129,7 @@ export default {
                             })
                         })
                     }
-                    else if(res.data.code===201){
+                    else if(res.data.code===403){
                         MessageBox('您已报名过')
                     }
                     
@@ -242,5 +243,7 @@ export default {
         font-size: 20px;
         appearance:none
     }
-    
+    option{
+         opacity: 0;
+    }
 </style>

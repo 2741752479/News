@@ -5,6 +5,12 @@ import Sign from '../pages/Sign'
 import Apoint from '../pages/Apoint'
 import Login from '../pages/Login'
 import Spoint from '../pages/Spoint'
+import Ltest from '../pages/Ltest'
+import Introduce from '../pages/Introduce'
+import About from '../components/About'
+import We from '../components/We'
+import Need from '../components/Need'
+import One from '../components/One'
 //创建并暴露一个路由器
 export default new VueRouter({
 	routes:[
@@ -31,6 +37,34 @@ export default new VueRouter({
 		{
 			path:'/Spoint',
 			component:Spoint
-		}
+		},
+		{
+			path:'/Ltest',
+			component:Ltest
+		},
+		{
+			path:'/Introduce',
+			component:Introduce,
+			children:[
+				{
+					path:'/About',
+					component:About
+				},
+				{
+					path:'/We',
+					component:We
+				},
+				{
+					path:'/Need',
+					component:Need,
+					children:[
+						{
+							path:'/One',
+							component:One,
+						}
+					]
+				}
+			]
+		},
 	]
 })

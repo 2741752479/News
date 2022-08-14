@@ -3,10 +3,10 @@
         <div class="top">欢迎加入桑梓实验室！</div>
         <div class="content">
             <div class="btn1">
-                <p style="font-size: 5vw;margin-top: 5vw;">实验室介绍</p>
+                <p style="font-size: 5vw;margin-top: 5vw;" @click="getIntro">实验室介绍</p>
                 <p style="font-size: 2vw;margin-top: 2vw;opacity:0.9">看看实验室都有些什么吧</p>
             </div>
-            <div class="btn2">
+            <div class="btn2" @click="gettest">
                 <p style="font-size: 5vw;margin-top: 5vw;">问卷测试</p>
                 <p style="font-size: 2vw;margin-top: 2vw;opacity:0.9">测试看看你适合哪一个部门吧</p>
             </div>
@@ -32,6 +32,12 @@
             },
             getapply(){
                 this.$router.push('Login')
+            },
+            gettest(){
+                this.$router.push('Ltest')
+            },
+            getIntro(){
+                this.$router.push('Introduce')
             }
         }
     }

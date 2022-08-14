@@ -6,8 +6,10 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 //引入路由器
 import router from './router'
+import 'font-awesome/css/font-awesome.min.css'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+
 Vue.use(MintUI)
 Vue.config.productionTip = false
 //应用插件
