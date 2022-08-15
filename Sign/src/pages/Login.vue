@@ -16,7 +16,7 @@
             </div>
         </div>
         <h2>请核对上述信息与报名时相同</h2>
-      <div class="butn" @click="Signup">登录</div>
+      <div class="butn" @click="Signup" isshow="btnshow1">登录</div>
   </div>
   
 </template>
@@ -30,7 +30,27 @@ export default {
         return{
           stuName:'',
              stuNum:'',
-             phoneNum:''
+             phoneNum:'',
+            docmHeight: document.documentElement.clientHeight, //默认屏幕高度
+            showHeight: document.documentElement.clientHeight, //实时屏幕高度
+            btnshow1:true
+        }
+    },
+      watch:{
+        showHeight:function(){
+            if(this.docmHeight>this.showHeight){
+                this.btnshow1=false
+            }else{
+                this.btnshow1=true
+            }
+        }
+    },
+      mounted () {
+    // 对手机机型的判断
+      window.onresize = ()=>{
+        return(()=>{
+        this.showHeight = document.documentElement.clientHeight||document.body.clientHeight;
+        })()
         }
     },
     methods:{
