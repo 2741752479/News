@@ -27,12 +27,12 @@
 <script>
 	export default {
 		name:'About',
-      created() {
-        history.pushState(null, null, document.URL);
-        window.addEventListener("popstate", function () {
-          history.pushState(null, null, document.URL);
-        });
-      },
+      // created() {
+      //   history.pushState(null, null, document.URL);
+      //   window.addEventListener("popstate", function () {
+      //     history.pushState(null, null, document.URL);
+      //   });
+      // },
 	}
 </script>
 <style scoped>

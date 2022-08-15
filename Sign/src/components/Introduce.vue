@@ -42,7 +42,7 @@
             }
         },
         mounted(){
-           this.$router.push({
+           this.$router.replace({
             path: '/One'
           })
         },
@@ -50,18 +50,18 @@
     'selected': {
       handler: function () {
         if (this.selected === '1') {
-          this.$router.push({
+          this.$router.replace({
             path: '/One'
           })
         }
         if (this.selected === '2') {
-          this.$router.push('/We')
+          this.$router.replace('/We')
         } 
         if (this.selected === '3') {
-          this.$router.push('/About')
+          this.$router.replace('/About')
         } 
           if (this.selected === '4') {
-          this.$router.push('/Need')
+          this.$router.replace('/Need')
         } 
       }
     }
