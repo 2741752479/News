@@ -74,7 +74,7 @@ export default {
             try{
                 axios({
                 method:'post',
-                url:'http://localhost:8888/student/order',
+                url:'/student/order',
                 data:{
                     department1:this.department1,
                      department2:this.department2,

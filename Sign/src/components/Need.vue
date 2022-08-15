@@ -149,6 +149,12 @@
             line:[]
             }
         },
+            created() {
+            history.pushState(null, null, document.URL);
+            window.addEventListener("popstate", function () {
+            history.pushState(null, null, document.URL);
+            });
+        },
         mounted(){
             this.lis=document.querySelectorAll('li'),
             this.rbs=document.querySelectorAll('.rb'),

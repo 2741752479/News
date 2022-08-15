@@ -59,7 +59,7 @@ export default {
             try{
                 axios({
                 method:'post',
-                url:'http://localhost:8888/student/login',
+                url:'/student/login',
                 data:{
                     phoneNum: this.phoneNum,
                     stuName: this.stuName,

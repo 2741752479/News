@@ -27,14 +27,12 @@
 <script>
 	export default {
 		name:'About',
-		/* beforeDestroy() {
-			console.log('About组件即将被销毁了')
-		},*/
-		/* mounted() {
-			console.log('About组件挂载完毕了',this)
-			window.aboutRoute = this.$route
-			window.aboutRouter = this.$router
-		},  */
+      created() {
+        history.pushState(null, null, document.URL);
+        window.addEventListener("popstate", function () {
+          history.pushState(null, null, document.URL);
+        });
+      },
 	}
 </script>
 <style scoped>

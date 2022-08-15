@@ -106,7 +106,7 @@ export default {
             else {
                 axios({
                     method:'post',
-                    url:'http://localhost:8888/student/apply',
+                    url:'/student/apply',
                     data:{
                         department1:this.department1,
                         department2:this.department2,
