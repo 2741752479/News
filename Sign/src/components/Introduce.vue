@@ -84,7 +84,7 @@ p{
   background-color: rgb(122, 157, 247);
   width: 100%;
   height: 40rem;
-  padding-top: 2vw;
+  padding-top: 1vw;
   overflow: hidden;
 
 }
@@ -96,7 +96,6 @@ p{
     bottom: 0rem;
     display: flex;
     position:absolute;
-    bottom: 0rem;
 }
 .tabbar ul{
     /* 去掉前面的小黑点 */
@@ -104,7 +103,7 @@ p{
     /* 让li横向排列 */
     display: flex;
     width: 100%;
-    height: 5.5rem;
+    height: 5rem;
     margin-left: 1vw;
     margin-right: 1vw;
 }

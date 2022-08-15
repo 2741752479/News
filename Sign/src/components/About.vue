@@ -3,7 +3,8 @@
     <div class="cont">
          <div class="text">
             <p id="to" style=" color: #fff;font-size: 6vw;">无论部门：</p>
-           <p id="te" style=" color: #fff;font-size: 4vw;">我们需要乐观向上，负责肯干的你的加入</p>
+           <p id="te" style=" color: #fff;font-size: 4vw;">我们需要乐观向上，</p>
+            <p id="te" style=" color: #fff;font-size: 4vw;">负责肯干的你的加入</p>
            <p id="te1" style=" color: #fff;font-size: 4vw;">现有的技能并不决定一切</p>
            <p  id="te1" style=" color: #fff;font-size: 4vw;">态度才是最重要的方面，有胆你就来！</p> 
          <p id="te" style=" color: #fff;font-size: 4vw;">跨部门学习体验机会</p> 
@@ -47,13 +48,13 @@
    margin-top: 3vw;  
 }
 .cot{
-  padding-left: 15vw;
+  padding-left: 10vw;
    padding-right: 10vw;
 }
 .cont{
   width: 100%;
   height: 200rem;
-  padding-top: 2vw;
+  padding-top: 6vw;
 padding: 5px;
 padding-left:6vw;
 background-color: rgb(122, 157, 247);

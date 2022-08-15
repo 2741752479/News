@@ -48,9 +48,9 @@
 .cont{
   width: 100%;
   height: 200rem;
-  padding-top: 2vw;
+  padding-top: 10vw;
 padding: 5px;
-padding-left:6vw;
+padding-left:3vw;
 background-color: rgb(122, 157, 247);
 }
 .text{

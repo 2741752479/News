@@ -14,10 +14,10 @@
                 <p style="font-size: 5vw;margin-top: 5vw;">纳新报名</p>
                 <p style="font-size: 2vw;margin-top: 2vw;opacity:0.9">赶紧填写报名表参与纳新吧</p>
             </div>
-            <div class="btn4" @click="getapply">
+            <!-- <div class="btn4" @click="getapply">
                 <p style="font-size: 5vw;margin-top: 5vw;">面试预约</p>
                 <p style="font-size: 2vw;margin-top: 2vw;opacity:0.9">预约你的面试吧</p>
-            </div>
+            </div> -->
             
         </div>
     </div>
