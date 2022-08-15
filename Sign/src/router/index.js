@@ -6,7 +6,7 @@ import Apoint from '../pages/Apoint'
 import Login from '../pages/Login'
 import Spoint from '../pages/Spoint'
 import Ltest from '../pages/Ltest'
-import Introduce from '../pages/Introduce'
+import Intro from '../pages/Intro'
 import About from '../components/About'
 import We from '../components/We'
 import Need from '../components/Need'
@@ -43,9 +43,13 @@ export default new VueRouter({
 			component:Ltest
 		},
 		{
-			path:'/Introduce',
-			component:Introduce,
+			path:'/Intro',
+			component:Intro,
 			children:[
+				{
+					path:'/One',
+					component:One
+				},
 				{
 					path:'/About',
 					component:About
@@ -57,12 +61,6 @@ export default new VueRouter({
 				{
 					path:'/Need',
 					component:Need,
-					children:[
-						{
-							path:'/One',
-							component:One,
-						}
-					]
 				}
 			]
 		},

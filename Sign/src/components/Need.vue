@@ -156,6 +156,7 @@
         }
 </script>
 <style scoped>
+
 h4{
     margin-bottom: 5vw;
     color: #fff;
@@ -182,16 +183,17 @@ h5{
 .cot{
    padding-left: 15vw;
    padding-right: 10vw;
+   background-color: rgb(122, 157, 247);
 }
 .cont{
   width: 100%;
-
+background-color: rgb(122, 157, 247);
   padding-top: 2vw;
 padding: 5px;
 padding-left:2vw;
 }
 .text{
-
+    
     margin-left: 4vw;
     position: relative;
     color: #fff;
@@ -242,20 +244,22 @@ li{
 }
 .container{
     width: 100%;
-    height: 500px;
+    height: 600px;
     overflow: hidden;
     padding: auto;
     display: flex;
-    align-items: center;
+    
+    background-color: rgb(122, 157, 247);
 }
 .left-box{
     width: 25%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    
+    background-color: rgb(122, 157, 247);
 }
 .left-box li{
-    padding: 7.5vw 0;
+    padding: 9vw 0;
     line-height: 34px;
     color: rgb(119, 109, 109);
     cursor: pointer;
@@ -267,7 +271,7 @@ li{
     font-size: 30px;
     margin-right: 15px;
     width: 34px;
-    height: 34px;
+    height: 30px;
     line-height: 34px;
     text-align: center;
 }
@@ -279,7 +283,7 @@ li{
     color: #e74c3c;
 } */
 .border{
-    height: 450px;
+    height: 500px;
     width: 1px;
     background-color: #ddd;
 }
@@ -320,8 +324,8 @@ li{
     width: 100%;
     height: 100%;
     display: flex;
-   margin-top: 15vw;
-   margin-left: 5vw;
+   margin-top: 18vw;
+   margin-left: 6vw;
     flex-direction: column;
     color: #333;
     position: absolute;

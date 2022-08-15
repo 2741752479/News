@@ -1,78 +1,32 @@
 <template>
-
-    <div>
-      
-            <!-- tab-container
-            <mt-tab-container v-model="selected">
-            <mt-tab-container-item id="1">
-            </mt-tab-container-item>
-            <mt-tab-container-item id="2">
-                
-            </mt-tab-container-item>
-            <mt-tab-container-item id="3">
-                
-            </mt-tab-container-item>
-            </mt-tab-container> -->
-  <div class="cont">
-    <div class="cot" v-show="isShow"> 
-        <div class="text">
-           <p id="te" style=" color: #fff;font-size: 6vw;">我们是:</p> 
-         <p id="te" style=" color: #fff;font-size: 4vw;">华侨大学网络创新实验室(桑梓实验室)</p> 
-        <p  id="te" style=" color: #fff;font-size: 4vw;">成立于1993年</p> 
-         <p  id="te" style=" color: #fff;font-size: 4vw;"> 隶属于华侨大学信息化建设与管理处</p>
-          <p  id="te" style=" color: #fff;font-size: 4vw;"> 目前为校区直属技术团队</p>
-           <p  id="te" style=" color: #fff;font-size: 4vw;">是华大的信息化基石</p>
-         <p  id="te" style=" color: #fff;font-size: 4vw;">是华大最优秀的信息化团队</p>
-         <p  id="te" style=" color: #fff;font-size: 4vw;">在二十余年的时间里</p>
-         <p  id="te" style=" color: #fff;font-size: 4vw;">一直代表着华侨大学学生组织里</p>
-          <p  id="te" style=" color: #fff;font-size: 4vw;">互联网技术以及服务的最高水平。</p>
-          <p  id="te" style=" color: #fff;font-size: 4vw;">从曾经的网络杂志，桑梓年华论坛，</p>
-          <p  id="te" style=" color: #fff;font-size: 4vw;">到如今集教务、生活服务</p>
-         <p   id="te" style=" color: #fff;font-size: 4vw;">于一身的微信服务平台</p>
-       <p  id="te" style=" color: #fff;font-size: 4vw;">——桑梓微助手</p>
-         <p  id="te" style=" color: #fff;font-size: 4vw;">实验室一直致力于</p>
-           <p  id="te" style=" color: #fff;font-size: 4vw;">利用互联网技术服务华大师生</p>
-           <p  id="te" style=" color: #fff;font-size: 4vw;">以及不断探索学习最新的知识。</p>
-        </div>
-    </div>
-     <router-view></router-view>
-  </div>
+    <div class="Introduce">
   <div class="tabbar">
   <mt-navbar v-model="selected" >
         <ul>
-           
-            <li class="item active" id="1">
+            <li class="item active" >
                  <mt-tab-item id="1">
                      <i class="fa fa-heart-o"></i>
                      <p>实验室介绍</p>
-                     </mt-tab-item>
-               
+                     </mt-tab-item>     
             </li>
-          
-         
-            <li class="item" id="2">
+            <li class="item">
              <mt-tab-item id="2" >
                 <i class="fa fa-user-o"></i>
                 <p>我们</p>
                 </mt-tab-item>
             </li>
-        
-      
-            <li class="item" id="3">
+            <li class="item">
              <mt-tab-item id="3">
                  <i class="fa fa-bell-o"></i>
                 <p>关于部门</p>
-                </mt-tab-item>
-                
+                </mt-tab-item>   
             </li>
-             <li class="item" id="4">
+             <li class="item">
              <mt-tab-item id="4">
                  <i class="fa fa-star-o"></i>
                 <p>部门介绍</p>
-                </mt-tab-item>
-                
+                </mt-tab-item>     
             </li>
-           
         </ul>
         </mt-navbar>
     </div>
@@ -85,29 +39,29 @@
         data(){
             return{
                 selected:'1',
-                isShow:true
             }
         },
-         watch: {
+        mounted(){
+           this.$router.push({
+            path: '/One'
+          })
+        },
+    watch: {
     'selected': {
       handler: function () {
         if (this.selected === '1') {
           this.$router.push({
-            path: '/Introduce'
+            path: '/One'
           })
-           this.isShow=true
         }
         if (this.selected === '2') {
-          this.$router.push('/We'),
-          this.isShow=false
+          this.$router.push('/We')
         } 
         if (this.selected === '3') {
           this.$router.push('/About')
-          this.isShow=false
         } 
           if (this.selected === '4') {
           this.$router.push('/Need')
-          this.isShow=false
         } 
       }
     }
@@ -160,7 +114,7 @@ p{
     position: relative;
     z-index: 1;
     width: 4rem;
-    height: 80px;
+    height: 90px;
    
     /* 弹性布局 居中 */
     display: flex;

@@ -2,7 +2,7 @@
 	<div class="About">
     <div class="cont">
          <div class="text">
-             <p id="to" style=" color: #fff;font-size: 6vw;">无论部门：</p>
+            <p id="to" style=" color: #fff;font-size: 6vw;">无论部门：</p>
            <p id="te" style=" color: #fff;font-size: 4vw;">我们需要乐观向上，负责肯干的你的加入</p>
            <p id="te1" style=" color: #fff;font-size: 4vw;">现有的技能并不决定一切</p>
            <p  id="te1" style=" color: #fff;font-size: 4vw;">态度才是最重要的方面，有胆你就来！</p> 
@@ -56,6 +56,7 @@
   padding-top: 2vw;
 padding: 5px;
 padding-left:6vw;
+background-color: rgb(122, 157, 247);
 }
 .text{
 

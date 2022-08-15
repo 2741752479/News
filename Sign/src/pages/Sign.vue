@@ -64,22 +64,22 @@ export default {
             btnshow:true
         }
     },
-   mounted () {
+    watch:{
+        showHeight:function(){
+            if(this.docmHeight>this.showHeight){
+                this.btnshow=false
+            }else{
+                this.btnshow=true
+            }
+        }
+    },
+      mounted () {
     // 对手机机型的判断
       window.onresize = ()=>{
         return(()=>{
-        this.showHeight = document.body.clientHeight;
+        this.showHeight = document.documentElement.clientHeight||document.body.clientHeight;
         })()
         }
-    },
-    watch:{
-        showHeight:function() {
-        if(this.docmHeight > this.showHeight){
-        this.btnshow=false
-        }else{
-        this.btnshow=true
-        }
-        }   
     },
     methods:{
         Submit(){

@@ -37,7 +37,7 @@
                 this.$router.push('Ltest')
             },
             getIntro(){
-                this.$router.push('Introduce')
+                this.$router.push('Intro')
             }
         }
     }

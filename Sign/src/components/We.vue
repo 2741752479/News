@@ -51,6 +51,7 @@
   padding-top: 2vw;
 padding: 5px;
 padding-left:6vw;
+background-color: rgb(122, 157, 247);
 }
 .text{
 
