@@ -67,7 +67,7 @@
             </li>
              <li class="item" id="4">
              <mt-tab-item id="4">
-                 <i class="fa fa-bell-o"></i>
+                 <i class="fa fa-star-o"></i>
                 <p>部门介绍</p>
                 </mt-tab-item>
                 
@@ -124,22 +124,25 @@ p{
 .cot{
   padding-left: 7vw;
    padding-right: 10vw;
+   overflow: hidden;
 }
 .cont{
-  background-color: #2962ff60;
+  background-color: rgb(122, 157, 247);
   width: 100%;
-  height: 200rem;
+  height: 40rem;
   padding-top: 2vw;
+  overflow: hidden;
 
 }
 .tabbar{
     /* 相对定位 */
-
-    background-color: #2962ff60;
+    width: 100%;
+    background-color:white;
     border-radius: 0px;
     bottom: 0rem;
     display: flex;
     position:absolute;
+    bottom: 0rem;
 }
 .tabbar ul{
     /* 去掉前面的小黑点 */
@@ -148,6 +151,8 @@ p{
     display: flex;
     width: 100%;
     height: 5.5rem;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
 
 .tabbar ul li{
@@ -162,7 +167,7 @@ p{
     justify-content: center;
     align-items: center;
     margin-left: 4vw;
-    margin-right: 4vw;
+    margin-right: 3.2vw;
     /* 光标变小手 */
     cursor: pointer;
     /* 设置过渡 */
@@ -184,19 +189,9 @@ p{
     font-size: 28px;
     transition: 0.5s;
 }
-body{
-    /* 100%窗口高度 */
-    height: 100vh;
-    /* 弹性布局 水平+垂直居中 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #222;
-}
 
 .text{
-
-
+   margin-left: 6vw;
     position: relative;
     color: #fff;
     font-size: 4vw;

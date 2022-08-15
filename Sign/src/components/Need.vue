@@ -158,15 +158,17 @@
 <style scoped>
 h4{
     margin-bottom: 5vw;
+    color: #fff;
 }
 #p1{
-    font-size: 2px;
+    font-size: 1vw;
     margin: 3px;
     padding:0px;
-    color: rgb(55, 89, 139);
+    color: rgb(254, 251, 251);
 }
 h5{
     margin-top: 5vw;
+    color: #fff;
 }
 #to{
   margin-top: 2vw;
@@ -255,7 +257,7 @@ li{
 .left-box li{
     padding: 7.5vw 0;
     line-height: 34px;
-    color: rgb(173, 154, 154);
+    color: rgb(119, 109, 109);
     cursor: pointer;
     display: flex;
     /* 过渡效果 */
@@ -271,7 +273,7 @@ li{
 }
 /* li选中态 */
 .left-box li.active{
-    color: rgb(11, 11, 11);
+    color:#fff;
 }
 /* .left-box li.active .fa{
     color: #e74c3c;
@@ -309,6 +311,10 @@ li{
     flex: 1;
     height: 100%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
 .right-box .rb{
     width: 100%;

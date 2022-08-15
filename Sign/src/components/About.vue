@@ -59,7 +59,7 @@ padding-left:6vw;
 }
 .text{
 
-    margin-left: 4vw;
+    margin-left: 6vw;
     position: relative;
     color: #fff;
     font-size: 4vw;
