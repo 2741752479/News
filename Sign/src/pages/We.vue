@@ -1,6 +1,6 @@
 
 <template>
-  <div class="We">
+  <div class="We" >
      <div class="cont"> 
             <div class="text">
                  <p id="to" style="font-size: 6vw;">我们：</p>
@@ -40,22 +40,22 @@ export default {
     name:'We',
       methods: {
       Go1(){
-          this.$router.push({
+          this.$router.replace({
             path: '/Intro'
           })
         },
        Go2(){
-          this.$router.push({
+          this.$router.replace({
             path: '/We'
           })
         },
          Go3(){
-          this.$router.push({
+          this.$router.replace({
             path: '/About'
           })
         },
         Go4(){
-           this.$router.push('/Need')
+           this.$router.replace('/Need')
         }
       }
 }

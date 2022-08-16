@@ -173,22 +173,22 @@
         },
         methods:{
         Go1(){
-            this.$router.push({
+            this.$router.replace({
                 path: '/Intro'
             })
             },
         Go2(){
-            this.$router.push({
+            this.$router.replace({
                 path: '/We'
             })
             },
         Go3(){
-        this.$router.push({
+        this.$router.replace({
             path: '/About'
         })
         },
         Go4(){
-        this.$router.push('/Need')
+        this.$router.replace('/Need')
         },
         change(index){
             this.lis.forEach((item1)=>{
