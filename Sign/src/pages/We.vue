@@ -1,24 +1,18 @@
+
 <template>
-  <div class="Intro">
+  <div class="We">
      <div class="cont"> 
             <div class="text">
-             <p id="to" style=" font-size: 6vw;">无论部门：</p>
-           <p id="te1" style=" font-size: 4vw;">我们需要乐观向上，</p>
-            <p id="te1" style=" font-size: 4vw;">负责肯干的你的加入</p>
-           <p id="te1" style=" font-size: 4vw;">现有的技能并不决定一切</p>
-           <p  id="te1" style=" font-size: 4vw;">态度才是最重要的方面，有胆你就来！</p> 
-         <p id="te1" style=" font-size: 4vw;">跨部门学习体验机会</p> 
-         <p  id="te1" style=" font-size: 4vw;"> 想学UI设计，想学活动运营</p>
-          <p  id="te1" style="font-size: 4vw;"> 想学编程？实验室各部门大佬带你飞！</p>
-        <p id="te1" style=" font-size: 4vw;">想参与校内各种各样的比赛</p>
-         <p  id="te1" style=" font-size: 4vw;">却苦于没有优秀的队友</p>
-         <p  id="te1" style="font-size: 4vw;">和实验室的伙伴们一起报名吧！</p> 
-         <p  id="te1" style=" font-size: 4vw;">还有指导老师带着大家一起奋斗！</p> 
-          <p id="te1" style=" font-size: 4vw;">字节 谷歌 阿里 腾讯 百度 京东 …</p>
-         <p  id="te1" style=" font-size: 4vw;">乃至厦门本地优秀互联网公司</p>
-         <p  id="te1" style=" font-size: 4vw;">均有往届学长学姐。</p> 
-         <p  id="te1" style=" font-size: 4vw;">可通过实验室获得内推机会！</p> 
-          <p  id="te1" style=" font-size: 4vw;">还可享受团建、聚餐…实验室一切福利</p> 
+                 <p id="to" style="font-size: 6vw;">我们：</p>
+                <p id="te" style="font-size: 4vw;">开发服务在校师生的各类大小系统</p> 
+              <p id="te" style="font-size: 4vw;">负责微信公众号"桑梓微助手”的运营</p> 
+              <p  id="te" style=" font-size: 4vw;"> 负责华大新社区平台的搭建工作</p>
+                <p  id="te" style="font-size: 4vw;"> 各类网络与信息系统相关的创新活动</p>
+                <p  id="te" style="font-size: 4vw;">管理全校移动端最大的</p>
+                <p  id="te" style="font-size: 4vw;">教务生活服务平台</p>
+                  <p id="te" style="font-size: 4vw;">(刚进学校不认路？课程安排不知道？)</p>
+              <p  id="te" style=" font-size: 4vw;">(网费水电在哪交、一卡通怎么充值？)</p>
+              <p  id="te1" style=" font-size: 5vw;"> “桑梓微助手”通通帮你解决！</p> 
         </div>
      </div>
     <div class="tabbar">
@@ -43,7 +37,7 @@
 </template>
 <script>
 export default {
-    name:'About',
+    name:'We',
       methods: {
       Go1(){
           this.$router.push({
@@ -63,22 +57,21 @@ export default {
         Go4(){
            this.$router.push('/Need')
         }
-      
       }
 }
 </script>
 
 <style scoped>
-#to{
-  margin-bottom:5vw ;
+#te{
+     margin-top: 6vw;
 }
 #te1{
-     margin-top: 3vw;
+  margin-top: 12vw;
 }
 .Intro{
      width: 100%;
      height: 100%;
-     overflow:hidden;
+    overflow:hidden;
 }
 i{
   display: block;
@@ -116,7 +109,7 @@ i{
     transition: 0.5s;
 }
 .text{
-     padding: 6vw;
+   padding: 6vw;
      height: 80%;
     margin-left: 10vw;
     margin-right: 6vw;

@@ -1,30 +1,28 @@
 <template>
-	<div class="Need">
-    <div class="cont">
-         <div class="text">
-             <p id="to" style=" color: #fff;font-size: 4vw;">目前，实验室分为五个部门:</p>
-           <p id="te" style=" color: #fff;font-size: 4vw;">策划部，运营部，美工部，软件部、运维部</p>
+  <div class="Need">
+     <div class="cont"> 
+        <div class="text">
+            <p id="to" style=" font-size: 4vw;">目前，实验室分为五个部门:</p>
+           <p id="te" style=" font-size: 4vw;">策划部，运营部，美工部，软件部、运维部</p>
         </div>
-    </div>
-         <div class="container">
-        <div class="left-box">
-            <ul>
-                <li class="active" @click="change(0)">
+        <div class="container">
+            <div class="left-box">
+           
+                <a id="a1" class="active" @click="change(0)">
                     策划部
-                </li>
-                <li @click="change(1)">
+                </a>
+                <a @click="change(1)">
                     运营部
-                </li>
-                <li @click="change(2)">
+                </a>
+                <a @click="change(2)">
                     美工部
-                </li>
-                <li @click="change(3)">
+                </a>
+                <a @click="change(3)">
                     软件部
-                </li>
-                <li @click="change(4)">
+                </a>
+                <a id="yun" @click="change(4)">
                     运维部
-                </li>
-            </ul>
+                </a>
         </div>
         <div class="border">
             <div class="line line1"></div>
@@ -136,9 +134,28 @@
             </div>
         </div>
     </div>
-    </div>
-</template>
 
+     </div>
+    <div class="tabbar">
+            <div id="tos" @click="Go1">
+                <i class="fa fa-heart-o"></i>
+                <p>实验室介绍</p>    
+            </div>
+             <div id="tos" @click="Go2">
+                <i class="fa fa-user-o"></i>
+                <p>我们</p>
+              </div>
+             <div id="tos" @click="Go3">
+                 <i class="fa fa-bell-o"></i>
+                <p>关于部门</p>
+                </div>   
+             <div id="tos" @click="Go4">
+                 <i class="fa fa-star-o"></i>
+                <p>部门介绍</p>
+              </div>     
+          </div>
+     </div>
+</template>
 <script>
 	export default {
 		name:'Need',
@@ -149,77 +166,104 @@
             line:[]
             }
         },
-        //     created() {
-        //     history.pushState(null, null, document.URL);
-        //     window.addEventListener("popstate", function () {
-        //     history.pushState(null, null, document.URL);
-        //     });
-        // },
         mounted(){
-            this.lis=document.querySelectorAll('li'),
+            this.lis=document.querySelectorAll('a'),
             this.rbs=document.querySelectorAll('.rb'),
             this.line=document.querySelector('.line')
         },
         methods:{
-            change(index){
-                this.lis.forEach((item1)=>{
-                    item1.classList.remove('active');
-            this.rbs.forEach((item2)=>{   
-                item2.classList.remove('active');
+        Go1(){
+            this.$router.push({
+                path: '/Intro'
             })
+            },
+        Go2(){
+            this.$router.push({
+                path: '/We'
+            })
+            },
+        Go3(){
+        this.$router.push({
+            path: '/About'
+        })
+        },
+        Go4(){
+        this.$router.push('/Need')
+        },
+        change(index){
+            this.lis.forEach((item1)=>{
+                item1.classList.remove('active');
+        this.rbs.forEach((item2)=>{   
+            item2.classList.remove('active');
+        })
         this.lis[index].classList.add('active');
         this.rbs[index].classList.add('active');
         this.line.className='line line'+(index+1); //index是从0开始，所以这里要+1
-    })
-}
-            }
+            })
         }
+    }
+}
 </script>
 <style scoped>
-
-h4{
-    margin-bottom: 5vw;
-    color: #fff;
-}
-#p1{
-    font-size: 4vw;
-    margin: 3px;
-    padding:0px;
-    color: rgb(254, 251, 251);
+li{
+    display: block;
 }
 h5{
-    margin-top: 5vw;
-    color: #fff;
+    margin-top: 4vw;
 }
-#to{
-  margin-top: 2vw;
+#p1{
+    margin-top:2vw;
+  font-size: 3.5vw;
 }
 #te{
-  margin-top: 5vw;
+     margin-top: 3vw;
 }
-#te1{
-   margin-top: 3vw;  
+.Intro{
+     width: 100%;
+     height: 100%;
+     overflow:hidden;
 }
-.cot{
-   padding-left: 15vw;
-   padding-right: 10vw;
-   background-color: rgb(122, 157, 247);
+i{
+  display: block;
+  margin-bottom: 3vw;
 }
-.cont{
-  width: 100%;
-background-color: rgb(122, 157, 247);
-  padding-top: 2vw;
-padding: 5px;
-padding-left:2vw;
+#tos{
+  width:25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabbar{
+    /* 相对定位 */
+    /* width: 100%;
+    background-color:white;
+    border-radius: 0px;
+    bottom: 0rem;
+    display: flex;
+    position:absolute;
+    height: 80px; */
+     border: 1px solid rgba(0, 0, 0, .2);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        height: 10%;
+        width: 100%;
+        bottom: 0rem;
+        position:absolute;
+        display: flex;
+}
+ .fa{
+    /* 字体图标大小 */
+    font-size: 25px;
+    transition: 0.5s;
 }
 .text{
-    
-    margin-left: 4vw;
+     padding: 5vw;
+     height: 80%;
     position: relative;
-    color: #fff;
     font-size: 4vw;
     letter-spacing: 3px;
-    width: 65px;
+    width: 100%;
     white-space: nowrap;
     overflow: hidden;
     --count: 20;
@@ -259,53 +303,67 @@ padding-left:2vw;
         width: calc(var(--count) * 65px);
     }
 }
-li{
-    list-style: none;
-}
 .container{
     width: 100%;
+    /* height: calc(100% - 25vw); */
     height: 600px;
     overflow: hidden;
     padding: auto;
     display: flex;
     
-    background-color: rgb(122, 157, 247);
 }
 .left-box{
-    width: 25%;
-    display: flex;
-    justify-content: center;
     
-    background-color: rgb(122, 157, 247);
-}
-.left-box li{
-    padding: 9vw 0;
-    line-height: 34px;
-    color: rgb(119, 109, 109);
-    cursor: pointer;
+    width: 25%;
+    height: 80%;
+   
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+       /* width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute; */
+    
+}
+.left-box a{
+   padding:4vw;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: rgb(143, 137, 137);
+    cursor: pointer;
+    height: 25% - 10vw;
     /* 过渡效果 */
     transition: 0.2s ease-out;
 }
-.left-box .fa{
+/* .left-box .fa{
     font-size: 30px;
     margin-right: 15px;
     width: 34px;
     height: 30px;
     line-height: 34px;
     text-align: center;
-}
+} */
 /* li选中态 */
-.left-box li.active{
-    color:#fff;
+.left-box a.active{
+    color: black;
 }
 /* .left-box li.active .fa{
     color: #e74c3c;
 } */
 .border{
-    height: 500px;
+    height:85%;
     width: 1px;
-    background-color: #ddd;
+    background-color: rgb(201, 198, 198);
 }
 /* .border .line{
     width: 6px;
@@ -316,37 +374,14 @@ li{
     transition: 0.4s ease-in-out;
 } */
 /* 分别设置各个红色小块的垂直位置 */
-.border .line1{
-    margin-top: 10vw;
-}
-.border .line2{
-    margin-top: 65px;
-}
-.border .line3{
-    margin-top: 150px;
-}
-.border .line4{
-    margin-top: 170px;
-}
-.border .line5{
-    margin-top: 225px;
-}
-.right-box{
-    flex: 1;
+.right-box .rb{
+    width: 75%;
     height: 100%;
-    position: relative;
     display: flex;
+
     flex-direction: column;
     justify-content: center;
-    align-content: center;
-}
-.right-box .rb{
-    width: 100%;
-    height: 100%;
-    display: flex;
-   margin-top: 18vw;
-   margin-left: 6vw;
-    flex-direction: column;
+    align-items: center;
     color: #333;
     position: absolute;
     /* 默认隐藏 */
@@ -354,12 +389,8 @@ li{
     opacity: 0;
     transition: 0.4s ease-in-out;
 }
-.right-box .fa{
-    font-size: 64px;
-}
-.right-box h1{
-    margin: 30px 0 40px 0;
-}
+
+
 .right-box p{
     padding: 0 30px;
 }

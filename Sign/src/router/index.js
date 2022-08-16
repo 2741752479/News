@@ -8,9 +8,8 @@ import Spoint from '../pages/Spoint'
 import Ltest from '../pages/Ltest'
 import Intro from '../pages/Intro'
 import About from '../components/About'
-import We from '../components/We'
+import We from '../pages/We'
 import Need from '../components/Need'
-import One from '../components/One'
 //创建并暴露一个路由器
 export default new VueRouter({
 	routes:[
@@ -45,24 +44,18 @@ export default new VueRouter({
 		{
 			path:'/Intro',
 			component:Intro,
-			children:[
-				{
-					path:'/One',
-					component:One
-				},
-				{
-					path:'/About',
-					component:About
-				},
-				{
-					path:'/We',
-					component:We
-				},
-				{
-					path:'/Need',
-					component:Need,
-				}
-			]
+		},
+		{
+			path:'/We',
+			component:We,
+		},
+		{
+			path:'/About',
+			component:About,
+		},
+		{
+			path:'/Need',
+			component:Need,
 		},
 	]
 })
