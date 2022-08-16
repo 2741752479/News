@@ -81,7 +81,12 @@ export default {
                         stuNum: this.stuNum
                 }
               }).then(res=>{
-                  if(res.data.code===200){
+                if(this.department1===this.department2){
+                     MessageBox('请勿选择相同部门哦')
+                }
+                else{
+                    if(res.data.code===200){
+                        console.log(res)
                       MessageBox('提交成功').then(action=>{
                         localStorage.setItem('department1', this.department1)
                         localStorage.setItem('department2', this.department2)
@@ -89,13 +94,11 @@ export default {
                                 path: '/Spoint'
                             })
                         })
-                  }
-                  else if(res.data.code===401){
-                    MessageBox('您未报名')
-                  }
-                  else if(res.data.code===201){
-                    MessageBox('您重复预约')
-                  }
+                    }
+                    else if(res.data.code===401){
+                        MessageBox('您未报名')
+                    }
+                    }
               })
               .catch(res => {
             })

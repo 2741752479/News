@@ -80,7 +80,7 @@ export default {
             if(this.department2!==''){
               axios({
                 method:'post',
-                url:'http://localhost:8888/student/wait',
+                url:'/student/wait',
                 data:{
                     department:this.department2,
                     stuNum: this.stuNum

@@ -315,7 +315,7 @@ i{
 .left-box{
     
     width: 25%;
-    height: 80%;
+    height: 85%;
    
     display: flex;
     flex-direction: column;
