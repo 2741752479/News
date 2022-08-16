@@ -88,7 +88,7 @@ export default {
 }
 .tet{
  
-  padding-right: 1vw;
+  padding-right: 2vw;
   height: 33rem;
   overflow: scroll;
   display: flex;
