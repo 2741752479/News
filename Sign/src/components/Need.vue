@@ -6,7 +6,7 @@
            <p id="te" style=" font-size: 4vw;">策划部，运营部，美工部，软件部、运维部</p>
         </div>
         <div class="container">
-            <div class="left-box">
+            <div class="left-box" style="overflow-y:scroll">
            
                 <a id="a1" class="active" @click="change(0)">
                     策划部
@@ -23,11 +23,11 @@
                 <a id="yun" @click="change(4)">
                     运维部
                 </a>
-        </div>
+            </div>
         <div class="border">
             <div class="line line1"></div>
         </div>
-        <div class="right-box">
+        <div class="right-box" style="overflow-y:scroll">
             <div class="rb active">
                 <h4>关键词:策划、统筹、组织、创造力</h4>
                 <p id="p1">策划发挥实验室的大脑功能</p>
@@ -111,7 +111,7 @@
                   <p id="p1"> 肯吃苦，勤努力</p>
                 <p id="p1">  我们要的就是你！</p>
             </div>
-             <div class="rb">
+             <div class="rb" >
                     <h4>关键词:维护、管理、检测 </h4>
                 <p id="p1">运维是各类产品的幕后维护师</p>
                   <p id="p1">这是统筹桑梓社区的所有服务器</p>
@@ -261,7 +261,7 @@ i{
      padding: 5vw;
      height: 80%;
     position: relative;
-    font-size: 4vw;
+    font-size: 3.5vw;
     letter-spacing: 3px;
     width: 100%;
     white-space: nowrap;
@@ -306,17 +306,15 @@ i{
 .container{
     width: 100%;
     /* height: calc(100% - 25vw); */
-    height: 600px;
-    overflow: hidden;
+    height: 33rem;
+   
     padding: auto;
     display: flex;
     
 }
 .left-box{
-    
     width: 25%;
     height: 85%;
-   
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -334,7 +332,6 @@ i{
 }
 .left-box a{
    padding:4vw;
-    width: 100%;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -376,18 +373,23 @@ i{
 /* 分别设置各个红色小块的垂直位置 */
 .right-box .rb{
     width: 75%;
-    height: 100%;
-    display: flex;
-
+    /* padding-top:28vw; */
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    align-items: center; */
     color: #333;
     position: absolute;
     /* 默认隐藏 */
     top: -350px;
     opacity: 0;
     transition: 0.4s ease-in-out;
+      height: 25rem;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -396,7 +398,7 @@ i{
 }
 /* 右侧内容区选中态 */
 .right-box .rb.active{
-    top: 0;
+    top: 28vw;
     opacity: 1;
 }
 </style>

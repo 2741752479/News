@@ -1,8 +1,9 @@
 <template>
-  <div class="Intro">
+  <div class="About" >
      <div class="cont"> 
-            <div class="text">
-             <p id="to" style=" font-size: 6vw;">无论部门：</p>
+        <div class="hed" >
+            <div class="tet" style="overflow: scroll;" >   
+                  <p id="to" style=" font-size: 6vw;">无论部门：</p>
            <p id="te1" style=" font-size: 4vw;">我们需要乐观向上，</p>
             <p id="te1" style=" font-size: 4vw;">负责肯干的你的加入</p>
            <p id="te1" style=" font-size: 4vw;">现有的技能并不决定一切</p>
@@ -19,9 +20,9 @@
          <p  id="te1" style=" font-size: 4vw;">均有往届学长学姐。</p> 
          <p  id="te1" style=" font-size: 4vw;">可通过实验室获得内推机会！</p> 
           <p  id="te1" style=" font-size: 4vw;">还可享受团建、聚餐…实验室一切福利</p> 
-        </div>
-     </div>
-    <div class="tabbar">
+            </div>
+          </div> 
+          <div class="tabbar">
             <div id="tos" @click="Go1">
                 <i class="fa fa-heart-o"></i>
                 <p>实验室介绍</p>    
@@ -39,11 +40,12 @@
                 <p>部门介绍</p>
               </div>     
           </div>
+        </div>
      </div>
 </template>
 <script>
 export default {
-    name:'About',
+    name:'We',
       methods: {
       Go1(){
           this.$router.replace({
@@ -63,22 +65,47 @@ export default {
         Go4(){
            this.$router.replace('/Need')
         }
-      
       }
 }
 </script>
 
 <style scoped>
-#to{
-  margin-bottom:5vw ;
+.cont{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.hed{
+
+  width: 100%;
+  height: 90%;
+  padding-left:9vw;
+  padding-right:9vw;
+  padding-top:6vw;
+  display: flex;
+  justify-content: center;
+ 
+}
+.tet{
+ 
+  padding-right: 1vw;
+  height: 33rem;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#te{
+     margin-top: 6vw;
 }
 #te1{
-     margin-top: 3vw;
+  margin-top: 7vw;
 }
 .Intro{
      width: 100%;
      height: 100%;
-     overflow:hidden;
+    overflow:hidden;
 }
 i{
   display: block;
@@ -101,6 +128,7 @@ i{
     display: flex;
     position:absolute;
     height: 80px; */
+    
      border: 1px solid rgba(0, 0, 0, .2);
      background-color: #fff;
         box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
@@ -114,55 +142,5 @@ i{
     /* 字体图标大小 */
     font-size: 25px;
     transition: 0.5s;
-}
-.text{
-     padding: 6vw;
-     height: 80%;
-    margin-left: 10vw;
-    margin-right: 6vw;
-    margin-top: 6vw;
-    position: relative;
-    color: #fff;
-    font-size: 4vw;
-    letter-spacing: 3px;
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    --count: 20;
-    /* 执行动画: 动画名 时长 分步过渡(这里分6步) 停留在最后一帧 */
-    /* 时长要根据字数而定,字数多的话要适当延长 */
-    animation: typing 1.8s steps(var(--count)) forwards;
-    -webkit-box-reflect: below 1px linear-gradient(transparent 30%,rgba(0,0,0,0.05));
-}
-/* 光标 */
-.text::after{
-    content: "";
-    width: 2px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #fff;
-    animation: blink 2s linear infinite;
-}
-
-/* 定义动画 */
-/* 光标闪烁 */
-@keyframes blink {
-    0%,49%{
-        opacity: 0;
-    }
-    50%,100%{
-        opacity: 1;
-    }
-}
-/* 打字动画 */
-@keyframes typing {
-    0%{
-        width: 0;
-    }
-    100%{
-        width: calc(var(--count) * 65px);
-    }
 }
 </style>

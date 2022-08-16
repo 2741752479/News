@@ -2,7 +2,7 @@
 <template>
   <div class="sign">
     <div class="top">纳新报名</div>
-    <div class="content"> 
+    <div class="content" > 
         <div class="sgn">
             <p>您的姓名：</p>
             <input id='ipt1' type="text" v-model="stuName"/>
@@ -41,7 +41,7 @@
                 <option value="美工部">美工部</option>
                 </select>
         </div>
-        <div class="submit" @click="Submit" v-show="btnshow">提交</div>
+        <div class="sgn"><div class="submit" @click="Submit" >提交</div> </div>
     </div>
   </div>
 </template>
@@ -64,23 +64,23 @@ export default {
             btnshow:true
         }
     },
-    watch:{
-        showHeight:function(){
-            if(this.docmHeight>this.showHeight){
-                this.btnshow=false
-            }else{
-                this.btnshow=true
-            }
-        }
-    },
-      mounted () {
-    // 对手机机型的判断
-      window.onresize = ()=>{
-        return(()=>{
-        this.showHeight = document.documentElement.clientHeight||document.body.clientHeight;
-        })()
-        }
-    },
+    // watch:{
+    //     showHeight:function(){
+    //         if(this.docmHeight>this.showHeight){
+    //             this.btnshow=false
+    //         }else{
+    //             this.btnshow=true
+    //         }
+    //     }
+    // },
+    //   mounted () {
+    // // 对手机机型的判断
+    //   window.onresize = ()=>{
+    //     return(()=>{
+    //     this.showHeight = document.documentElement.clientHeight||document.body.clientHeight;
+    //     })()
+    //     }
+    // },
     methods:{
         Submit(){
             var reg = /^[\u4E00-\u9FA5]{2,4}$/;
@@ -147,24 +147,25 @@ export default {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        overflow: scroll;
     }
     .sgn{
-        margin: 5px;
+        margin: 4px;
         height: 20vw;
         width: 90%;
     }
     .submit{
         border: 1px solid rgba(0, 0, 0, .2);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-        border-radius:8px;
+       margin: auto;
+        border-radius:9px;
         font-size: 5vw;
         line-height: 15vw;
         text-align: center;
         height: 14vw;
         width: 60vw;
-        bottom: 1rem;
+        /* bottom: 1rem;
         margin: auto ;
-        position:absolute;
+        position:absolute; */
     }
     p{
         font-size: 18px;

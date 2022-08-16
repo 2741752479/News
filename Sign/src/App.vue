@@ -8,15 +8,7 @@
 <script>
   export default {
     name: "app",
-    methods: {
-//禁止滚动条滚动
-stop(){
-var mo=function(e){e.preventDefault();};
-document.body.style.overflow='hidden';
-document.addEventListener("touchmove",mo,false);
 }
-}
-  }
 </script>
 <style>
 

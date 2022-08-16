@@ -52,8 +52,18 @@
         justify-content: space-around;
         align-items: center;
     }
-    .btn1,.btn2,.btn3,.btn4{
+    .btn2,.btn3,.btn4{
         position: relative;
+        height: 20vw;
+        width: 70%;
+        border: 1px solid rgba(0, 0, 0, .2);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        border-radius:8px;
+        margin: 8vw;
+        margin-top:3vw;
+    }
+    .btn1{
+          position: relative;
         height: 20vw;
         width: 70%;
         border: 1px solid rgba(0, 0, 0, .2);
