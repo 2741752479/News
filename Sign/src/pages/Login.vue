@@ -15,8 +15,8 @@
                 <input id='ipt2' type="text"  v-model="phoneNum"/>
             </div>
         </div>
-        <h2>请核对上述信息与报名时相同</h2>
-      <div class="butn" @click="Signup" isshow="btnshow1">登录</div>
+        <h2 v-show="btnshow1">请核对上述信息与报名时相同</h2>
+      <div class="butn" @click="Signup" v-show="btnshow1">登录</div>
   </div>
   
 </template>
