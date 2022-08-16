@@ -1,5 +1,5 @@
 <template>
-  <div class="Intro">
+  <div class="Intro" >
      <div class="cont"> 
             <div class="text">
              <p id="te" style="font-size: 6vw;">我们是:</p> 
