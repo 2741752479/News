@@ -14,9 +14,12 @@
                 <p>您的联系方式:</p>
                 <input id='ipt2' type="text"  v-model="phoneNum"/>
             </div>
+             <div class="sgn1">
+                 <h2>请核对上述信息与报名时相同</h2>
+                <div class="butn" @click="Signup">登录</div>
+            </div>
         </div>
-        <h2 v-show="btnshow1">请核对上述信息与报名时相同</h2>
-      <div class="butn" @click="Signup" v-show="btnshow1">登录</div>
+      
   </div>
   
 </template>
@@ -106,6 +109,14 @@ export default {
         height: 20%;
         width: 90%;
     }
+    .sgn1{
+        margin: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+        width: 90%;
+    }
     p{
         font-size: 18px;
         margin: 2vw;
@@ -114,9 +125,13 @@ export default {
         color: #cad0d3;
         font-size: 4vw;
         bottom: 25vw;
-        margin: 1vw 24vw;
-        position:absolute;
-        opacity:1;
+        /* margin: 20vw 18vw; */
+        margin-top:40vw;
+        margin-left: 18vw;
+        margin-right: 18vw;
+        margin-bottom: 3vw;
+        /* position:absolute;
+                opacity:1; */
     }
       #ipt1{ 
         padding-left: 4vw; 
@@ -186,8 +201,9 @@ export default {
         text-align: center;
         height: 15vw;
         width: 60vw;
-        bottom: 1rem;
+         margin: auto
+        /* bottom: 1rem;
         margin: auto 20%;
-        position:absolute;
+        position:absolute; */
     }
 </style>
