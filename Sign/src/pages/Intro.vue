@@ -79,11 +79,9 @@ export default {
 
   width: 100%;
   height: 90%;
-  padding-left:9vh;
-  padding-right:9vh;
+
   padding-top:1vh;
-  display: flex;
-  justify-content: center;
+
  
 }
 .tet{
