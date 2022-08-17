@@ -314,7 +314,7 @@ i{
 }
 .left-box{
     width: 25%;
-    height: 85%;
+    height: 68vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -331,7 +331,8 @@ i{
     
 }
 .left-box a{
-   padding:4vw;
+
+   padding-top:4vh;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -358,7 +359,7 @@ i{
     color: #e74c3c;
 } */
 .border{
-    height:85%;
+    height: 71vh;
     width: 1px;
     background-color: rgb(201, 198, 198);
 }
@@ -384,7 +385,7 @@ i{
     top: -350px;
     opacity: 0;
     transition: 0.4s ease-in-out;
-      height: 25rem;
+      height: 65vh;
     overflow: scroll;
     display: flex;
     flex-direction: column;

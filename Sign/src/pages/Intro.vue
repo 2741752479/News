@@ -3,7 +3,7 @@
      <div class="cont"> 
         <div class="hed" >
             <div class="tet" style="overflow: scroll;" >   
-                   <p id="te" style="font-size: 6vw;">我们是:</p> 
+                   <p id="te" style="font-size: 7vw;">我们是:</p> 
          <p id="te" style=" font-size: 4vw;">华侨大学网络创新实验室(桑梓实验室)</p> 
         <p  id="te" style="font-size: 4vw;">成立于1993年</p> 
          <p  id="te" style="font-size: 4vw;"> 隶属于华侨大学信息化建设与管理处</p>
@@ -79,17 +79,15 @@ export default {
 
   width: 100%;
   height: 90%;
-  padding-left:9vw;
-  padding-right:9vw;
-  padding-top:6vw;
+  padding-left:9vh;
+  padding-right:9vh;
+  padding-top:1vh;
   display: flex;
   justify-content: center;
  
 }
 .tet{
- 
-  padding-right: 2vw;
-  height: 33rem;
+  height: 85vh;
   overflow: scroll;
   display: flex;
   flex-direction: column;
@@ -97,10 +95,10 @@ export default {
   align-items: center;
 }
 #te{
-     margin-top: 6vw;
+     margin-top: 2vh;
 }
 #te1{
-  margin-top: 7vw;
+  margin-top: 6vh;
 }
 .Intro{
      width: 100%;

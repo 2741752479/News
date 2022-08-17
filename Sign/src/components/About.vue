@@ -3,7 +3,7 @@
      <div class="cont"> 
         <div class="hed" >
             <div class="tet" style="overflow: scroll;" >   
-                  <p id="to" style=" font-size: 6vw;">无论部门：</p>
+                  <p id="te1" style=" font-size: 6vw;">无论部门：</p>
            <p id="te1" style=" font-size: 4vw;">我们需要乐观向上，</p>
             <p id="te1" style=" font-size: 4vw;">负责肯干的你的加入</p>
            <p id="te1" style=" font-size: 4vw;">现有的技能并不决定一切</p>
@@ -79,28 +79,26 @@ export default {
 
   width: 100%;
   height: 90%;
-  padding-left:9vw;
-  padding-right:9vw;
-  padding-top:6vw;
+  padding-left:9vh;
+  padding-right:9vh;
+  padding-top:1vh;
   display: flex;
   justify-content: center;
  
 }
 .tet{
- 
-  padding-right: 2vw;
-  height: 33rem;
+  height: 85vh;
   overflow: scroll;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-#te{
-     margin-top: 6vw;
-}
 #te1{
-  margin-top: 7vw;
+     margin-top: 2vh;
+}
+#te{
+  margin-top: 6vh;
 }
 .Intro{
      width: 100%;
@@ -120,15 +118,6 @@ i{
 }
 
 .tabbar{
-    /* 相对定位 */
-    /* width: 100%;
-    background-color:white;
-    border-radius: 0px;
-    bottom: 0rem;
-    display: flex;
-    position:absolute;
-    height: 80px; */
-    
      border: 1px solid rgba(0, 0, 0, .2);
      background-color: #fff;
         box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
@@ -143,4 +132,5 @@ i{
     font-size: 25px;
     transition: 0.5s;
 }
+
 </style>
