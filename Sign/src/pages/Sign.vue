@@ -2,6 +2,9 @@
 <template>
   <div class="sign">
     <div class="top">纳新报名</div>
+     <div class="arrow-left arrow-box" >
+          <b class="left" @click="Retur"><i class="left-arrow1"></i><i class="left-arrow2"></i></b>
+          </div>
     <div class="content" > 
         <div class="sgn">
             <p>您的姓名：</p>
@@ -111,6 +114,9 @@ export default {
     //     }
     // },
     methods:{
+        Retur(){
+            this.$router.replace('/')
+        },
         Submit(){
             var reg = /^[\u4E00-\u9FA5]{2,4}$/;
             var myregex = /^[0-9]*$/
@@ -170,6 +176,44 @@ export default {
 </script>
 
 <style scoped>
+.arrow-box {
+margin-top: 1vh;
+width: 30px;
+height: 30px;
+position: fixed;
+}
+ 
+.left {
+width: 20px;
+height: 20px;
+position: absolute;
+left: 0;
+top: 0;
+z-index: 2;
+}
+.left-arrow1,
+.left-arrow2 {
+width: 0;
+height: 0;
+display: block;
+position: absolute;
+left: 0;
+top: 0;
+z-index: 5;
+border-top: 10px transparent dashed;
+border-left: 10px transparent dashed;
+border-bottom: 10px transparent dashed;
+border-right: 10px white solid;
+overflow: hidden;
+}
+ 
+.left-arrow1 {
+border-right: 10px black solid;
+}
+.left-arrow2 {
+left: 1px;
+border-right: 10px white solid;
+}
     .content{
         display: flex;
         padding-top:1rem;

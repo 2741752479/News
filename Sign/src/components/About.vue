@@ -2,6 +2,9 @@
   <div class="About" >
      <div class="cont"> 
         <div class="hed" >
+           <div class="arrow-left arrow-box">
+          <b class="left" @click="Retur"><i class="left-arrow1"></i><i class="left-arrow2"></i></b>
+          </div>
             <div class="tet" style="overflow: scroll;" >   
                   <p id="te1" style=" font-size: 6vw;">无论部门：</p>
            <p id="te1" style=" font-size: 4vw;">我们需要乐观向上，</p>
@@ -64,12 +67,52 @@ export default {
         },
         Go4(){
            this.$router.replace('/Need')
+        },
+         Retur(){
+            this.$router.replace('/')
         }
       }
 }
 </script>
 
 <style scoped>
+.arrow-box {
+width: 30px;
+height: 30px;
+position: fixed;
+}
+ 
+.left {
+width: 20px;
+height: 20px;
+position: absolute;
+left: 0;
+top: 0;
+z-index: 2;
+}
+.left-arrow1,
+.left-arrow2 {
+width: 0;
+height: 0;
+display: block;
+position: absolute;
+left: 0;
+top: 0;
+z-index: 5;
+border-top: 10px transparent dashed;
+border-left: 10px transparent dashed;
+border-bottom: 10px transparent dashed;
+border-right: 10px white solid;
+overflow: hidden;
+}
+ 
+.left-arrow1 {
+border-right: 10px black solid;
+}
+.left-arrow2 {
+left: 1px;
+border-right: 10px white solid;
+}
 .cont{
   width: 100%;
   height: 100%;

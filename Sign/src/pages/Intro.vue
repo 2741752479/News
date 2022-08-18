@@ -2,8 +2,11 @@
   <div class="Intro" >
      <div class="cont"> 
         <div class="hed" >
-            <div class="tet" style="overflow: scroll;" >   
-                   <p id="te" style="font-size: 7vw;">我们是:</p> 
+          <div class="arrow-left arrow-box" >
+          <b class="left" @click="Retur"><i class="left-arrow1"></i><i class="left-arrow2"></i></b>
+          </div>
+            <div class="tet" style="overflow: scroll;" >  
+            <p id="te" style="font-size: 7vw;">我们是:</p> 
          <p id="te" style=" font-size: 4vw;">华侨大学网络创新实验室(桑梓实验室)</p> 
         <p  id="te" style="font-size: 4vw;">成立于1993年</p> 
          <p  id="te" style="font-size: 4vw;"> 隶属于华侨大学信息化建设与管理处</p>
@@ -64,12 +67,52 @@ export default {
         },
         Go4(){
            this.$router.replace('/Need')
+        },
+        Retur(){
+            this.$router.replace('/')
         }
       }
 }
 </script>
 
 <style scoped>
+.arrow-box {
+width: 30px;
+height: 30px;
+position: fixed;
+}
+ 
+.left {
+width: 20px;
+height: 20px;
+position: absolute;
+left: 0;
+top: 0;
+z-index: 2;
+}
+.left-arrow1,
+.left-arrow2 {
+width: 0;
+height: 0;
+display: block;
+position: absolute;
+left: 0;
+top: 0;
+z-index: 5;
+border-top: 10px transparent dashed;
+border-left: 10px transparent dashed;
+border-bottom: 10px transparent dashed;
+border-right: 10px white solid;
+overflow: hidden;
+}
+ 
+.left-arrow1 {
+border-right: 10px black solid;
+}
+.left-arrow2 {
+left: 1px;
+border-right: 10px white solid;
+}
 .cont{
   width: 100%;
   height: 100%;

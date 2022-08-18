@@ -2,6 +2,9 @@
 <template>
 <div class="ltest">
     <div class="top">纳新问卷测试</div>
+    <div class="arrow-left arrow-box" v-show="isshow" >
+          <b class="left" @click="Retur"><i class="left-arrow1"></i><i class="left-arrow2"></i></b>
+    </div>
         <p id="quest" v-show="isshow" >Question</p>
         <div class="content" v-show="isshow1">
             <p>你认为你是否有探索未知的精神与为之努力的热情？</p>
@@ -158,6 +161,9 @@ export default {
     
     },
     methods:{
+        Retur(){
+             this.$router.replace('/')
+        },
         To2(){
             this.isshow1=false,
             this.isshow2=true
@@ -243,6 +249,44 @@ export default {
 </script>
     
 <style scoped>
+.arrow-box {
+margin-top: 2vh;
+width: 30px;
+height: 30px;
+position: fixed;
+}
+ 
+.left {
+width: 20px;
+height: 20px;
+position: absolute;
+left: 0;
+top: 0;
+z-index: 2;
+}
+.left-arrow1,
+.left-arrow2 {
+width: 0;
+height: 0;
+display: block;
+position: absolute;
+left: 0;
+top: 0;
+z-index: 5;
+border-top: 10px transparent dashed;
+border-left: 10px transparent dashed;
+border-bottom: 10px transparent dashed;
+border-right: 10px white solid;
+overflow: hidden;
+}
+ 
+.left-arrow1 {
+border-right: 10px black solid;
+}
+.left-arrow2 {
+left: 1px;
+border-right: 10px white solid;
+}
     .content{
         display: flex;
         width: 100%;

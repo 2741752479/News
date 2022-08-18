@@ -1,6 +1,9 @@
 <template>
   <div class="Need">
      <div class="cont"> 
+        <div class="arrow-left arrow-box">
+          <b class="left" @click="Retur"><i class="left-arrow1"></i><i class="left-arrow2"></i></b>
+          </div>
         <div class="text">
             <p id="to" style=" font-size: 4vw;">目前，实验室分为五个部门:</p>
            <p id="te" style=" font-size: 4vw;">策划部，运营部，美工部，软件部、运维部</p>
@@ -193,18 +196,59 @@
         change(index){
             this.lis.forEach((item1)=>{
                 item1.classList.remove('active');
-        this.rbs.forEach((item2)=>{   
-            item2.classList.remove('active');
-        })
-        this.lis[index].classList.add('active');
-        this.rbs[index].classList.add('active');
-        this.line.className='line line'+(index+1); //index是从0开始，所以这里要+1
+                this.rbs.forEach((item2)=>{   
+                    item2.classList.remove('active');
+                })
+                this.lis[index].classList.add('active');
+                this.rbs[index].classList.add('active');
+                this.line.className='line line'+(index+1); //index是从0开始，所以这里要+1
             })
+        },
+        Retur(){
+            this.$router.replace('/')
         }
     }
 }
 </script>
 <style scoped>
+.arrow-box {
+    margin-top: 1vh;
+width: 30px;
+height: 30px;
+position: absolute;
+}
+ 
+.left {
+width: 20px;
+height: 20px;
+position: absolute;
+left: 0;
+top: 0;
+z-index: 2;
+}
+.left-arrow1,
+.left-arrow2 {
+width: 0;
+height: 0;
+display: block;
+position: absolute;
+left: 0;
+top: 0;
+z-index: 5;
+border-top: 10px transparent dashed;
+border-left: 10px transparent dashed;
+border-bottom: 10px transparent dashed;
+border-right: 10px white solid;
+overflow: hidden;
+}
+ 
+.left-arrow1 {
+border-right: 10px black solid;
+}
+.left-arrow2 {
+left: 1px;
+border-right: 10px white solid;
+}
 li{
     display: block;
 }
@@ -258,7 +302,11 @@ i{
     transition: 0.5s;
 }
 .text{
-     padding: 5vw;
+    padding-top:7vw;
+    padding-bottom: 5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+     /* padding: 5vw; */
      height: 80%;
     position: relative;
     font-size: 3.5vw;
