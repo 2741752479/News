@@ -17,7 +17,36 @@
         </div>
         <div class="sgn">
             <p>您所在的学院：</p>
-            <input id='ipt4' type="text" v-model="academy"/>
+            <select v-model="academy" id='ipt4'>
+                <option value=""></option>
+                <option value="哲学与社会发展学院">哲学与社会发展学院</option>
+                <option value="国际关系学院">国际关系学院</option>
+                <option value="新闻与传播学院">新闻与传播学院</option>
+                <option value="华文学院">华文学院</option>
+                <option value="统计学院">统计学院</option>
+                 <option value="信息科学与工程学院">信息科学与工程学院</option>
+                <option value="计算机科学与技术学院">计算机科学与技术学院</option>
+                <option value="材料科学与工程学院">材料科学与工程学院</option>
+                <option value="化工学院">化工学院</option>
+                <option value="机电与自动化学院">机电与自动化学院</option>
+                 <option value="建筑学院">建筑学院</option>
+                <option value="土木工程学院">土木工程学院</option>
+                <option value="厦航学院">厦航学院</option>
+                <option value="音乐舞蹈学院">音乐舞蹈学院</option>
+                <option value="国际学院">国际学院</option>
+                <option value="旅游学院">旅游学院</option>
+                <option value="医学院">医学院</option>
+                <option value="法学院">法学院</option>
+                <option value="经济与金融学院">经济与金融学院</option>
+                <option value="工商管理学院">工商管理学院</option>
+                <option value="政治与公共管理学院">政治与公共管理学院</option>
+                <option value="外国语学院">外国语学院</option>
+                <option value="文学院">文学院</option>
+                <option value="数学科学学院">数学科学学院</option>
+                <option value="工学院">工学院</option>
+                 <option value="体育学院">体育学院</option>
+                <option value="美术学院">美术学院</option>
+            </select>
         </div>
         <div class="sgn">
             <p>您想要参加的部门(首选):</p>
@@ -211,14 +240,15 @@ export default {
     }
     #ipt4{ 
         padding-left: 4vw; 
-        height: 10vw;
-        width:95%;
+        height: 10.5vw;
+        width:100%;
         border: 1px solid rgba(0, 0, 0, .2);
         background:url(../../static/Home.png) no-repeat;
           border-radius:5px;
         background-size: 1rem;
         background-position: 95% 50%;
         font-size: 20px;
+        appearance:none
     }
     #ipt5{ 
         padding-left: 4vw; 
