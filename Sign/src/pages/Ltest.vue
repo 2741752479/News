@@ -1,10 +1,12 @@
 
 <template>
 <div class="ltest">
-    <div class="top">纳新问卷测试</div>
-    <div class="arrow-left arrow-box" v-show="isshow" >
+    <div class="top">
+        <div class="arrow-left arrow-box" >
           <b class="left" @click="Retur"><i class="left-arrow1"></i><i class="left-arrow2"></i></b>
-    </div>
+        </div>
+        纳新问卷测试
+        </div>
         <p id="quest" v-show="isshow" >Question</p>
         <div class="content" v-show="isshow1">
             <p>你认为你是否有探索未知的精神与为之努力的热情？</p>

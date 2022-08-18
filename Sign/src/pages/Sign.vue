@@ -1,10 +1,11 @@
 
 <template>
   <div class="sign">
-    <div class="top">纳新报名</div>
-     <div class="arrow-left arrow-box" >
+    <div class="top">
+        <div class="arrow-left arrow-box" >
           <b class="left" @click="Retur"><i class="left-arrow1"></i><i class="left-arrow2"></i></b>
-          </div>
+        </div>
+        纳新报名</div>
     <div class="content" > 
         <div class="sgn">
             <p>您的姓名：</p>
@@ -177,7 +178,7 @@ export default {
 
 <style scoped>
 .arrow-box {
-margin-top: 1vh;
+margin-top: 2vh;
 width: 30px;
 height: 30px;
 position: fixed;

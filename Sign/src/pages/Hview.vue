@@ -18,7 +18,6 @@
                 <p style="font-size: 5vw;margin-top: 5vw;">面试预约</p>
                 <p style="font-size: 2vw;margin-top: 2vw;opacity:0.9">预约你的面试吧</p>
             </div> -->
-            
         </div>
     </div>
 </template>

@@ -1,6 +1,10 @@
 <template>
   <div class="spoint">
-    <div class="top">面试预约</div>
+    <div class="top">
+       <div class="arrow-left arrow-box" >
+          <b class="left" @click="Retur"><i class="left-arrow1"></i><i class="left-arrow2"></i></b>
+          </div>
+          面试预约</div>
         <div class="content"> 
             <div class="sgn"> 
                 <p>您的姓名：</p>
@@ -53,6 +57,9 @@ export default {
         this.getwish();
     },
     methods:{
+      Retur(){
+        this.$router.replace('/')
+      },
         getwish(){
             this.stuName=localStorage.getItem('stuName'),
             this.stuNum=localStorage.getItem('stuNum'),
@@ -105,6 +112,44 @@ export default {
 }
 </script>
 <style scoped>
+.arrow-box {
+margin-top: 2vh;
+width: 30px;
+height: 30px;
+position: fixed;
+}
+ 
+.left {
+width: 20px;
+height: 20px;
+position: absolute;
+left: 0;
+top: 0;
+z-index: 2;
+}
+.left-arrow1,
+.left-arrow2 {
+width: 0;
+height: 0;
+display: block;
+position: absolute;
+left: 0;
+top: 0;
+z-index: 5;
+border-top: 10px transparent dashed;
+border-left: 10px transparent dashed;
+border-bottom: 10px transparent dashed;
+border-right: 10px white solid;
+overflow: hidden;
+}
+ 
+.left-arrow1 {
+border-right: 10px black solid;
+}
+.left-arrow2 {
+left: 1px;
+border-right: 10px white solid;
+}
      .butn{
         border: 1px solid rgba(0, 0, 0, .2);
         box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
