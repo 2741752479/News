@@ -77,6 +77,9 @@ export default {
             if(!(this.department1!==''||this.department2!=='')){
                 MessageBox('请至少选择一个部门')
             }
+            else if(this.department1===this.department2){
+                     MessageBox('请勿选择相同部门哦')
+                }
            else{ 
             try{
                 axios({
@@ -88,10 +91,6 @@ export default {
                         stuNum: this.stuNum
                 }
               }).then(res=>{
-                if(this.department1===this.department2){
-                     MessageBox('请勿选择相同部门哦')
-                }
-                else{
                     if(res.data.code===200){
                         console.log(res)
                       MessageBox('提交成功').then(action=>{
@@ -105,8 +104,8 @@ export default {
                     else if(res.data.code===401){
                         MessageBox('您未报名')
                     }
-                    }
-              })
+                }
+              )
               .catch(res => {
             })
             } catch(e){

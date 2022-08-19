@@ -3,8 +3,10 @@
         <td id="Nam">{{todo.stuName}}</td>
         <td id="depart">{{todo.department1+' '+todo.department2}}</td>
         <td id="school">{{todo.academy}}</td>
+        <td id="Right1">{{todo.major}}</td>
         <td id="phone">{{todo.phoneNum}}</td>
         <td id="Right">{{todo.stuNum}}</td>
+         
     </tr>
 </template>
 <script>
@@ -27,6 +29,9 @@ export default {
     #Right{
          border-right: 0px;
          width: 20%;
+    }
+    #Right1{
+        width: 20%;
     }
      #Nam{
       width: 15%;

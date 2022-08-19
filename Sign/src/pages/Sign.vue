@@ -52,6 +52,10 @@
                 <option value="美术学院">美术学院</option>
             </select>
         </div>
+         <div class="sgn">
+            <p>您的专业：</p>
+            <input id='ipt7' type="text" v-model="major"/>
+        </div>
         <div class="sgn">
             <p>您想要参加的部门(首选):</p>
            <select v-model="department1" id='ipt5'>
@@ -90,11 +94,12 @@ export default {
             stuName:'',
             stuNum:'',
             phoneNum:'',
+            major:'',
             department1:'',
             department2:'',
-            docmHeight: document.documentElement.clientHeight, //默认屏幕高度
-            showHeight: document.documentElement.clientHeight, //实时屏幕高度
-            btnshow:true
+            // docmHeight: document.documentElement.clientHeight, //默认屏幕高度
+            // showHeight: document.documentElement.clientHeight, //实时屏幕高度
+            // btnshow:true
         }
     },
     // watch:{
@@ -127,29 +132,37 @@ export default {
             }
             else if (this.phoneNum === ''||!show||this.phoneNum.length!=11)
             {
-                MessageBox('请输入正确号码');
+                MessageBox('请输入正确联系方式');
             }
             else if (this.stuNum === ''||this.stuNum.length!==10)
             {
                 MessageBox('请输入正确学号');
             }
-            else if (this.x==='') {
+            else if (this.academy==='') {
                 MessageBox('请输入所在学院');
             }
-            else if (this.department1==='') {
+            else if (this.major==='') {
+                MessageBox('请输入专业');
+            }
+            else if (this.department1===''&&this.department2==='') {
                 MessageBox('请输入想参加的部门');
             }
+            else if(this.department1===this.department2){
+                     MessageBox('请勿选择相同部门哦')
+                }
             else {
                 axios({
                     method:'post',
                     url:'/student/apply',
                     data:{
+                         academy:this.academy,
                         department1:this.department1,
                         department2:this.department2,
+                        major:this.major,
                         phoneNum:this.phoneNum,
                         stuName:this.stuName,
                         stuNum:this.stuNum,
-                        academy:this.academy,
+                        
                     }
                 }).then(res=>{
                     if(res.data.code===200){
@@ -217,20 +230,24 @@ border-right: 10px white solid;
 }
     .content{
         display: flex;
-        padding-top:1rem;
+        padding-top:0.5rem;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         overflow: scroll;
     }
     .sgn{
-        margin: 4px;
+        margin-left: 4px;
+        margin-right: 4px;
+ 
+        margin-top:1px;
         height: 20vw;
         width: 90%;
     }
     .submit{
         border: 1px solid rgba(0, 0, 0, .2);
        margin: auto;
+        margin-top:5px;
         border-radius:9px;
         font-size: 5vw;
         line-height: 15vw;
@@ -318,6 +335,18 @@ border-right: 10px white solid;
         background-position: 95% 50%;
         font-size: 20px;
         appearance:none
+    }
+    #ipt7{ 
+        padding-left: 4vw; 
+        /* height: 12vw; */
+        height: 10vw;
+        width:95%;
+        border: 1px solid rgba(0, 0, 0, .2);
+        background:url(../../static/Home.png) no-repeat;
+        border-radius:5px;
+        background-size: 1rem;
+        background-position: 95% 50%;
+        font-size: 20px;
     }
     option{
          opacity: 0;

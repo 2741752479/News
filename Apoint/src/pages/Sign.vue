@@ -10,8 +10,10 @@
       <th id="Nam">成员姓名</th>
       <th id="depart">意向部门</th>
       <th id="school">学院</th>
+      <th id="major">专业</th>
       <th id="phone">联系方式</th>
       <th id="Num">学号</th>
+      
     </tr>
     <Td  v-for="item in groceryList"
       v-bind:todo="item"
@@ -52,6 +54,7 @@ export default {
 </script>
 
 <style scoped>
+
 .arrow-box {
   margin-left: 1.5vw;
 margin-top: 2vh;
@@ -92,7 +95,7 @@ left: 1px;
 border-right: 10px white solid;
 }
     table {
-    	width: 100%;
+    	width: 125%;
       border-collapse: collapse;
     }
      
@@ -100,6 +103,9 @@ border-right: 10px white solid;
     	height: 14vw;
       font-size: 3vw;
       text-align: center;
+    }
+    #major{
+      width: 20%;
     }
     #Nam{
       width: 15%;

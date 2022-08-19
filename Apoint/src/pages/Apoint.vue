@@ -11,6 +11,7 @@
       <th id="depart">意向部门</th>
       <th id="stas">状态</th>
       <th id="dos">操作</th>
+      
     </tr>
     <Tdview  v-for="item in groceryList"
       v-bind:todo="item"
@@ -170,6 +171,9 @@ export default {
 }
 </script>
 <style scoped>
+.Apoint{
+  overflow-x: hidden;
+}
 .arrow-box {
   margin-left: 1.5vw;
 margin-top: 2vh;

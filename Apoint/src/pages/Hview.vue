@@ -1,7 +1,7 @@
 <template>
-    <div class="hview">
+    <div class="hview" style="overflow:hidden">
         <div class="top">纳新管理界面</div>
-        <div class="content">
+        <div class="content" >
             <div class="btn1" @click="getSign" style="overflow:hidden">
                 报名成员列表
             </div>

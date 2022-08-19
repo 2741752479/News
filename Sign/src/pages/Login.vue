@@ -44,23 +44,23 @@ export default {
             btnshow1:true
         }
     },
-      watch:{
-        showHeight:function(){
-            if(this.docmHeight>this.showHeight){
-                this.btnshow1=false
-            }else{
-                this.btnshow1=true
-            }
-        }
-    },
-      mounted () {
-    // 对手机机型的判断
-      window.onresize = ()=>{
-        return(()=>{
-        this.showHeight = document.documentElement.clientHeight||document.body.clientHeight;
-        })()
-        }
-    },
+    //   watch:{
+    //     showHeight:function(){
+    //         if(this.docmHeight>this.showHeight){
+    //             this.btnshow1=false
+    //         }else{
+    //             this.btnshow1=true
+    //         }
+    //     }
+    // },
+    //   mounted () {
+    // // 对手机机型的判断
+    //   window.onresize = ()=>{
+    //     return(()=>{
+    //     this.showHeight = document.documentElement.clientHeight||document.body.clientHeight;
+    //     })()
+    //     }
+    // },
     methods:{
          Retur(){
             this.$router.replace('/')
