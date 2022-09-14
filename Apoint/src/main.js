@@ -8,7 +8,7 @@ import VueRouter from 'vue-router'
 import router from './router'
 import 'mint-ui/lib/style.css'
 import axios from 'axios'
-axios.defaults.baseURL='https://registration.sends.cc/api'
+axios.defaults.baseURL='http://localhost:8888'
 Vue.config.productionTip = false
 //应用插件
 Vue.use(VueRouter)

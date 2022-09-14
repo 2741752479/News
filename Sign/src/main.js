@@ -10,6 +10,7 @@ import 'font-awesome/css/font-awesome.min.css'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import axios from 'axios'
+
 axios.defaults.baseURL='https://registration.sends.cc/api'
 Vue.use(MintUI)
 Vue.config.productionTip = false

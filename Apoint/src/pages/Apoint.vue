@@ -27,6 +27,12 @@
 </template>
 
 <script>
+  import { GetLine } from '../api/index'
+  import{AdvMessage}from '../api/index'
+  import { GetNext } from '../api/index'
+  import{DelayMessage}from '../api/index'
+  import{DelMessage}from '../api/index'
+  import{RetMessage}from '../api/index'
 import axios from 'axios'
 import Tdview from '../components/Tdview.vue'
 export default {
@@ -47,10 +53,10 @@ export default {
     },
     methods:{
         Retur(){
-            this.$router.replace('/')
+            this.$router.replace('/Hview')
         },
       getmessage(){
-          axios.get(`/admin/line/${this.department[this.currentIndex]}`).then(res=>{
+        GetLine(this.department[this.currentIndex]).then(res=>{
              this.groceryList =res.data.data
              var t=0
              var flag=1
@@ -95,22 +101,17 @@ export default {
           this.getmessage()
       },
       Next(){
-         axios.get(`/admin/next/${this.department[this.currentIndex]}`).then(res=>{
+         GetNext(this.department[this.currentIndex]).then(res=>{
              console.log(res)
              this.getmessage()
           }).catch(function(err){
               console.log(err);
           })    
       },
-      Adv(stunum){
-           axios({
-                method:'post',
-                url:`/admin/advance/${this.department[this.currentIndex]}`,
-                data:{
-                    department:this.department[this.currentIndex],
-                    stuNum: stunum
-                }
-              }).then(res=>{
+      Adv(stuNum){
+        console.log('1')
+              AdvMessage(this.department[this.currentIndex],stuNum).then(res=>{
+                console.log(res)
                   if(res.data.code===200){
                         // localStorage.setItem('department1', this.department1)
                         // localStorage.setItem('department2', this.department2)  
@@ -120,15 +121,8 @@ export default {
                   }
               })
       },
-      Dela(stunum){
-           axios({
-                method:'post',
-                url:`/admin/delay/${this.department[this.currentIndex]}`,
-                data:{
-                    department:this.department[this.currentIndex],
-                    stuNum: stunum
-                }
-              }).then(res=>{
+      Dela(stuNum){
+        DelayMessage(this.department[this.currentIndex],stuNum).then(res=>{
                   if(res.data.code===200){
                         // localStorage.setItem('department1', this.department1)
                         // localStorage.setItem('department2', this.department2)  
@@ -138,29 +132,15 @@ export default {
                   }
               })
       },
-       Del(stunum){
-           axios({
-                method:'post',
-                url:`/admin/delete/${this.department[this.currentIndex]}`,
-                data:{
-                    department:this.department[this.currentIndex],
-                    stuNum: stunum
-                }
-              }).then(res=>{
+       Del(stuNum){
+              DelMessage(this.department[this.currentIndex],stuNum).then(res=>{
                   if(res.data.code===200){
                          this.getmessage()
                   }
               })
       },
-      Ret(stunum){
-           axios({
-                method:'post',
-                url:'/admin/reset',
-                data:{
-                    department:this.department[this.currentIndex],
-                    stuNum: stunum
-                }
-              }).then(res=>{
+      Ret(stuNum){
+              RetMessage(this.department[this.currentIndex],stuNum).then(res=>{
                   if(res.data.code===200){
                          this.getmessage()
                   }

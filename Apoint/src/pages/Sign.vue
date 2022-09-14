@@ -24,6 +24,7 @@
 </template>
 
 <script>
+  import { SelectSign } from '../api/index'
 import axios from 'axios'
 import Td from '../components/Td'
 export default {
@@ -39,15 +40,17 @@ export default {
     },
     methods:{
        Retur(){
-            this.$router.replace('/')
+            this.$router.replace('/Hview')
         },
        getmessage(){
-          axios.get("/admin/applyLine").then(res=>{
-            console.log(res.data.data)
+        SelectSign().then(res=>{
+          console.log(res.data.data)
             this.groceryList =res.data.data
-          }).catch(function(err){
+        }
+        ).catch(function(err){
               console.log(err);
-          })    
+          }) 
+  
        }
     }
 }
