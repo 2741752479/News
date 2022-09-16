@@ -1,13 +1,10 @@
 // 请求
 import axios from 'axios'
-
-// create an axios instance   创建axios实例
 const instance = axios.create({
-	baseURL: 'http://localhost:8888', // api 的 base_url
-	withCredentials: false,//跨域时使用凭证，默认带上cookies
+	baseURL: 'https://registration.sends.cc/api', // api 的 base_url
+	withCredentials: false,
 	
   })
-
 // 添加请求拦截器
 instance.interceptors.request.use(
   config => {
@@ -19,6 +16,7 @@ instance.interceptors.request.use(
     return config;
   },
   error => {
+    
     return Promise.reject(error);
   });
 
