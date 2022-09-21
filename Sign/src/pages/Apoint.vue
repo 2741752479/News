@@ -88,21 +88,36 @@ export default {
                 data:{
                     department1:this.department1,
                      department2:this.department2,
-                        stuNum: this.stuNum
+                    stuNum: this.stuNum
                 }
               }).then(res=>{
                     if(res.data.code===200){
+                        console.log(localStorage.getItem('department1'))
                         console.log(res)
-                      MessageBox('提交成功').then(action=>{
-                        localStorage.setItem('department1', this.department1)
-                        localStorage.setItem('department2', this.department2)
+                        if(localStorage.getItem('department1')===null&&localStorage.getItem('department2')===null){
+                            MessageBox('预约成功').then(action=>{
+                            localStorage.setItem('department1', this.department1)
+                            localStorage.setItem('department2', this.department2)
                             this.$router.push({
                                 path: '/Spoint'
                             })
                         })
+                        }
+                        else{
+                            MessageBox('预约修改成功').then(action=>{
+                            localStorage.setItem('department1', this.department1)
+                            localStorage.setItem('department2', this.department2)
+                            this.$router.push({
+                                path: '/Spoint'
+                            })
+                        })
+                        }
                     }
                     else if(res.data.code===401){
                         MessageBox('您未报名')
+                    }
+                    else if(res.data.code===404){
+                        MessageBox('错误操作')
                     }
                 }
               )

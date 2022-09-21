@@ -79,6 +79,11 @@ export default {
               }).then(res=>{
                   if(res.data.code===200){
                       MessageBox('登录成功').then(action=>{
+                            var m=localStorage.getItem('stuNum')
+                            if(m!==this.stuNum){
+                                localStorage.removeItem('department1')
+                                localStorage.removeItem('department2')
+                            }
                             localStorage.setItem('stuName', this.stuName)
                             localStorage.setItem('stuNum', this.stuNum)
                             localStorage.setItem('phoneNum', this.phoneNum)

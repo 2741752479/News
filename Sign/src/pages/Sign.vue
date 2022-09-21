@@ -134,7 +134,7 @@ export default {
             {
                 MessageBox('请输入正确联系方式');
             }
-            else if (this.stuNum === ''||this.stuNum.length!==10)
+            else if (this.stuNum === ''||!(this.stuNum.length===10||this.stuNum.length===11))
             {
                 MessageBox('请输入正确学号');
             }
@@ -155,7 +155,7 @@ export default {
                     method:'post',
                     url:'/student/apply',
                     data:{
-                         academy:this.academy,
+                        academy:this.academy,
                         department1:this.department1,
                         department2:this.department2,
                         major:this.major,
